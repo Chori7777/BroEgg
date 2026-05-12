@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hTPWFB1hKWI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\p764\\Downloads\\Proyecto Parcial\\Proyecto Parcial\\ProyectoSDL2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\p764\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
