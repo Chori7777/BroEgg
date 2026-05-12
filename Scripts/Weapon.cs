@@ -10,10 +10,12 @@ namespace ProyectoSDL2.Engine.Scripts
     {
         float timer = 0;
         private Transform transform;
+        private Transform playerTransform;
 
-        public Weapon(Transform enemyTransform)
+        public Weapon(Transform enemyTransform, Transform playerTransform)
         {
             transform = enemyTransform;
+            this.playerTransform = playerTransform;
         }
 
         public void Shoot()
@@ -24,7 +26,7 @@ namespace ProyectoSDL2.Engine.Scripts
             if (timer >= 2)
             {
                 Engine.Debug("Disparo");
-                GameManager.Instace.LevelController.AddBulletToList(new Bullet(transform.PosX,transform.PosY));
+                GameManager.Instace.LevelController.AddBulletToList(new Bullet(transform.PosX,transform.PosY, playerTransform)); //Cambiar
                 timer = 0;
             }
         }

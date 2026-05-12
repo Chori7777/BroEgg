@@ -14,7 +14,7 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             transform = new Transform(startPosX, startPosY);
             enemyMovement = new EnemyMovement(transform);
-            weapon = new Weapon(transform);
+            weapon = new Weapon(transform, GameManager.Instace.LevelController.Player.Transform);
 
             images.Add(Engine.LoadImage("assets/enemy/0.png"));
             images.Add(Engine.LoadImage("assets/enemy/1.png"));
