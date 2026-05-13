@@ -29,6 +29,10 @@ namespace ProyectoSDL2.Engine.Scripts
             {
                 transform.Translate(0, 1 * speed);
             }
+            if(Engine.KeyPress(Engine.KEY_ESC))
+            {
+                Program.isGameRunning = false;  
+            }
 
         }
 

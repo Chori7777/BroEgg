@@ -6,6 +6,8 @@ namespace ProyectoSDL2.Engine.Scripts
     {
         static float deltaTime;
 
+        static public bool isGameRunning = true;
+
         public static float DeltaTime => deltaTime;
 
         static void Main(string[] args)
@@ -20,7 +22,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
             float lastFrameTime = 0;
 
-            while (true)
+            while (isGameRunning)
             {
                 currentTime = (float)(DateTime.Now - startTime).TotalSeconds;
                 deltaTime = currentTime - lastFrameTime;

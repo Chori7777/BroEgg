@@ -5,7 +5,7 @@
         Transform transform;
         PlayerInput input;
         Health health;
-
+   
         bool isActive = true;
 
         public Transform Transform => transform;
@@ -15,6 +15,7 @@
 
         public Player(int startPosX, int startPosY)
         {
+           
             transform = new Transform(startPosX, startPosY);
             health = new Health();
             input = new PlayerInput(transform);
