@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProyectoSDL2.Engine.Scripts
+﻿namespace ProyectoSDL2.Engine.Scripts
 {
     public class Health
     {
-        int health = 2;
+        private int hp;
 
-
-        public void GetDamaged()
+        public Health(int startingHp)
         {
-            health -= 1;
-            Engine.Debug($"Vida: {health}");
+            hp = startingHp;
+        }
 
-            if(health <= 0)
-            {
-                GameManager.Instace.ChangeGameState(GAME_STATE.END);
-            }
+        public void GetDamaged(int amount = 1)
+        {
+            hp -= amount;
+            Engine.Debug($"HP restante: {hp}");
+        }
+
+        public bool IsDead()
+        {
+            return hp <= 0;
         }
     }
 }

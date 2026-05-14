@@ -1,45 +1,39 @@
-﻿    using System;
-
-    namespace ProyectoSDL2.Engine.Scripts
+﻿namespace ProyectoSDL2.Engine.Scripts
+{
+    public class Bullet
     {
-        public class Bullet
+        private Transform transform;
+        private float dx;
+        private float dy;
+        private int speed = 8;
+
+        public Transform Transform => transform;
+
+        public Bullet(int startX, int startY, Transform target)
         {
-            Transform transform;
-            float dx, dy;
+            transform = new Transform(startX, startY, 16, 16);
 
-            int speed = 7;
-
-            public Bullet(int x, int y, Transform enemyTransform)
-            {
-                transform = new Transform(x + 50, y + 60);
-
-            // Vector desde la bala hacia el enemigo
-            float deltaX = enemyTransform.PosX - transform.PosX;
-            float deltaY = enemyTransform.PosY - transform.PosY;
+            float deltaX = target.PosX - startX;
+            float deltaY = target.PosY - startY;
 
             float length = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
             dx = deltaX / length;
             dy = deltaY / length;
         }
 
-            public void Update()
-            {
-                transform.Translate((int)(dx * speed), (int)(dy * speed));
+        public void Update()
+        {
+            transform.Translate((int)(dx * speed), (int)(dy * speed));
+        }
 
-                if (transform.PosX + 5 > GameManager.Instace.LevelController.Player.Transform.PosX &&
-                    transform.PosX < GameManager.Instace.LevelController.Player.Transform.PosX + 100 &&
-                    transform.PosY + 5 > GameManager.Instace.LevelController.Player.Transform.PosY &&
-                    transform.PosY < GameManager.Instace.LevelController.Player.Transform.PosY + 100)
-                {
-                    GameManager.Instace.LevelController.Player.Health.GetDamaged();
-                    GameManager.Instace.LevelController.BulletList.Remove(this);
-                }
-            }
+        public bool Overlaps(Transform other)
+        {
+            return transform.Overlaps(other);
+        }
 
-            public void Render()
-            {
-                Engine.Draw("assets/bullet.png", transform.PosX, transform.PosY);
-            }
-
+        public void Render()
+        {
+            Engine.Draw("assets/bullet.png", transform.PosX, transform.PosY);
         }
     }
+}

@@ -1,43 +1,38 @@
-﻿
-namespace ProyectoSDL2.Engine.Scripts
+﻿namespace ProyectoSDL2.Engine.Scripts
 {
     public class Enemy
     {
-        Transform transform;
-        EnemyMovement enemyMovement;
-        
-        Weapon weapon;
-        Animation animation;
+        private Transform transform;
+        private Health health;
+        private EnemyMovement movement;
+        private Animation animation;
 
-        List<Image> images = new List<Image>();
+        public Transform Transform => transform;
+        public Health Health => health;
 
         public Enemy(int startPosX, int startPosY)
         {
-            transform = new Transform(startPosX, startPosY);
-            enemyMovement = new EnemyMovement(transform, GameManager.Instace.LevelController.Player.Transform);
-            weapon = new Weapon(transform, GameManager.Instace.LevelController.Player.Transform);
+            transform = new Transform(startPosX, startPosY, 64, 64);
+            health = new Health(2);
+            movement = new EnemyMovement(transform, GameManager.Instance.LevelController.Player.Transform);
 
-            images.Add(Engine.LoadImage("assets/enemy/0.png"));
-            images.Add(Engine.LoadImage("assets/enemy/1.png"));
-            images.Add(Engine.LoadImage("assets/enemy/2.png"));
-            images.Add(Engine.LoadImage("assets/enemy/3.png"));
-
-            animation = new Animation(images, 0.1f);
+            List<Image> frames = new List<Image>();
+            frames.Add(Engine.LoadImage("assets/enemy/0.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/1.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/2.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/3.png"));
+            animation = new Animation(frames, 0.1f);
         }
 
         public void Update()
         {
+            movement.MoveEnemy();
             animation.Update();
-            enemyMovement.MoveEnemy();
-            weapon.Shoot();
         }
 
         public void Render()
         {
-            Engine.Draw(animation.currentFrame, transform.PosX, transform.PosY);
+            Engine.Draw(animation.CurrentFrame, transform.PosX, transform.PosY);
         }
-
-
-
     }
 }

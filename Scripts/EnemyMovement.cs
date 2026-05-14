@@ -1,29 +1,25 @@
-﻿
-
-namespace ProyectoSDL2.Engine.Scripts
+﻿namespace ProyectoSDL2.Engine.Scripts
 {
     public class EnemyMovement
     {
-        Transform transform;
-        Transform playerTransform;
-        private int speed = 5;
+        private Transform transform;
+        private Transform playerTransform;
+        private int speed = 2;
 
-        public EnemyMovement(Transform newTransform,Transform playerTransform)
+        public EnemyMovement(Transform enemyTransform, Transform playerTransform)
         {
-            transform = newTransform;
-            this.playerTransform = playerTransform; 
-          
-
+            transform = enemyTransform;
+            this.playerTransform = playerTransform;
         }
 
         public void MoveEnemy()
         {
-       
             float deltaX = playerTransform.PosX - transform.PosX;
             float deltaY = playerTransform.PosY - transform.PosY;
 
             float length = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
-            if (length == 0) return; // evitar división por cero si están encima
+
+            if (length == 0) return;
 
             float dx = deltaX / length;
             float dy = deltaY / length;

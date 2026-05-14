@@ -1,5 +1,4 @@
-﻿
-namespace ProyectoSDL2.Engine.Scripts
+﻿namespace ProyectoSDL2.Engine.Scripts
 {
     public class PlayerInput
     {
@@ -13,33 +12,28 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public void Update()
         {
-            if (Engine.KeyPress(Engine.KEY_A))
+            int moveX = 0;
+            int moveY = 0;
+
+            if (Engine.KeyPress(Engine.KEY_A)) moveX = -1;
+            if (Engine.KeyPress(Engine.KEY_D)) moveX = 1;
+            if (Engine.KeyPress(Engine.KEY_W)) moveY = -1;
+            if (Engine.KeyPress(Engine.KEY_S)) moveY = 1;
+
+            if (moveX != 0 && moveY != 0)
             {
-                transform.Translate(-1 * speed, 0);
+                float length = MathF.Sqrt(moveX * moveX + moveY * moveY);
+                transform.Translate((int)(moveX / length * speed), (int)(moveY / length * speed));
             }
-            if (Engine.KeyPress(Engine.KEY_D))
+            else
             {
-                transform.Translate(1 * speed, 0);
-            }
-            if (Engine.KeyPress(Engine.KEY_W))
-            {
-                transform.Translate(0, -1 * speed);
-            }
-            if (Engine.KeyPress(Engine.KEY_S))
-            {
-                transform.Translate(0, 1 * speed);
-            }
-            if(Engine.KeyPress(Engine.KEY_ESC))
-            {
-                Program.isGameRunning = false;  
+                transform.Translate(moveX * speed, moveY * speed);
             }
 
+            if (Engine.KeyPress(Engine.KEY_ESC))
+            {
+                Program.isGameRunning = false;
+            }
         }
-
-        public void UpdateSpeed(int newSpeed)
-        {
-            speed = newSpeed;
-        }
-
     }
 }

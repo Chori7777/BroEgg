@@ -2,44 +2,43 @@
 {
     public class Player
     {
-        Transform transform;
-        PlayerInput input;
-        Health health;
-   
-        bool isActive = true;
+        private Transform transform;
+        private PlayerInput input;
+        private Health health;
+       
+        private Weapon weapon;
 
         public Transform Transform => transform;
-        public PlayerInput Input => input;
         public Health Health => health;
-
 
         public Player(int startPosX, int startPosY)
         {
-           
-            transform = new Transform(startPosX, startPosY);
-            health = new Health();
+            transform = new Transform(startPosX, startPosY, 64, 64);
+            health = new Health(10);
             input = new PlayerInput(transform);
+            weapon = new Weapon(transform);
+
+           
         }
 
         public void Update()
         {
-            if (isActive)
+            input.Update();
+            weapon.Update();
+          
+
+            if (health.IsDead())
             {
-                input.Update();
+                GameManager.Instance.ChangeGameState(GAME_STATE.END);
             }
-
-
         }
 
         public void Render()
         {
-            if (isActive)
-            {
+            
+            
                 Engine.Draw("assets/ship.png", transform.PosX, transform.PosY);
-            }
+            
         }
-
-
-
     }
 }

@@ -15,7 +15,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
             Engine.Initialize();
 
-            GameManager.Instace.Start();
+            GameManager.Instance.Start();
 
             DateTime startTime = DateTime.Now;
             float currentTime;
@@ -28,8 +28,8 @@ namespace ProyectoSDL2.Engine.Scripts
                 deltaTime = currentTime - lastFrameTime;
                 lastFrameTime = currentTime;
 
-                GameManager.Instace.Update();
-                GameManager.Instace.Render();
+                GameManager.Instance.Update();
+                GameManager.Instance.Render();
             }
 
         }

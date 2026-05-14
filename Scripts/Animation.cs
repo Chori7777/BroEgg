@@ -1,37 +1,34 @@
-﻿
-namespace ProyectoSDL2.Engine.Scripts
+﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    internal class Animation
+    public class Animation
     {
-        List<Image> textures = new List<Image>();
+        private List<Image> frames;
         private int currentFrameIndex = 0;
-        private float speed = 0.5f;
-        private float currentAnimationTime = 0;
+        private float speed;
+        private float timer = 0;
 
-        public Image currentFrame => textures[currentFrameIndex];
+        public Image CurrentFrame => frames[currentFrameIndex];
 
-        public Animation(List<Image> images, float newSpeed)
+        public Animation(List<Image> frames, float speed)
         {
-            textures = images;
-            speed = newSpeed;
+            this.frames = frames;
+            this.speed = speed;
         }
 
         public void Update()
         {
-            currentAnimationTime += Program.DeltaTime;
+            timer += Program.DeltaTime;
 
-            if (currentAnimationTime >= speed)
+            if (timer >= speed)
             {
                 currentFrameIndex++;
-                currentAnimationTime = 0;
+                timer = 0;
 
-                if (currentFrameIndex >= textures.Count)
+                if (currentFrameIndex >= frames.Count)
                 {
                     currentFrameIndex = 0;
                 }
-
             }
         }
-
     }
 }
