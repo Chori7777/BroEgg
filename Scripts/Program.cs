@@ -31,11 +31,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 GameManager.Instance.Update();
                 GameManager.Instance.Render();
             }
-
         }
-
-
     }
-
 }
 

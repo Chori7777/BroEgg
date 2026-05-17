@@ -1,18 +1,15 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Enemy
+    public class Enemy : GameObject
     {
-        private Transform transform;
         private Health health;
         private EnemyMovement movement;
         private Animation animation;
 
-        public Transform Transform => transform;
         public Health Health => health;
 
-        public Enemy(int startPosX, int startPosY)
+        public Enemy(int startPosX, int startPosY, int enemyWidth, int enemyHeight)  : base(startPosX, startPosY, enemyWidth, enemyHeight)
         {
-            transform = new Transform(startPosX, startPosY, 64, 64);
             health = new Health(2);
             movement = new EnemyMovement(transform, GameManager.Instance.LevelController.Player.Transform);
 
@@ -24,13 +21,13 @@
             animation = new Animation(frames, 0.1f);
         }
 
-        public void Update()
+        public override void Update()
         {
             movement.MoveEnemy();
             animation.Update();
         }
 
-        public void Render()
+        public override void Render()
         {
             Engine.Draw(animation.CurrentFrame, transform.PosX, transform.PosY);
         }

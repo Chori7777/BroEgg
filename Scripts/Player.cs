@@ -1,27 +1,21 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Player
+    public class Player : GameObject
     {
-        private Transform transform;
         private PlayerInput input;
         private Health health;
        
         private Weapon weapon;
-
-        public Transform Transform => transform;
         public Health Health => health;
 
-        public Player(int startPosX, int startPosY)
+        public Player(int startPosX, int startPosY, int playerWidth, int playerHeight) : base(startPosX, startPosY, playerWidth, playerHeight)
         {
-            transform = new Transform(startPosX, startPosY, 64, 64);
             health = new Health(10);
             input = new PlayerInput(transform);
             weapon = new Weapon(transform);
-
-           
         }
 
-        public void Update()
+        public override void Update()
         {
             input.Update();
             weapon.Update();
@@ -33,12 +27,10 @@
             }
         }
 
-        public void Render()
+        public override void Render()
         {
             
-            
-                Engine.Draw("assets/ship.png", transform.PosX, transform.PosY);
-            
+               Engine.Draw("assets/ship.png", transform.PosX, transform.PosY);
         }
     }
 }

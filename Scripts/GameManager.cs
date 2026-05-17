@@ -14,7 +14,7 @@
         private GAME_STATE gameState = GAME_STATE.START;
         private LevelController levelController = new LevelController();
 
-        public LevelController LevelController { get { return levelController; } }
+        public LevelController LevelController { get { return levelController; } } //por aca se accede al levelController
 
         static public GameManager Instance
         {

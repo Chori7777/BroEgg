@@ -1,17 +1,14 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Bullet
+    public class Bullet : GameObject
     {
-        private Transform transform;
         private float dx;
         private float dy;
         private int speed = 8;
 
-        public Transform Transform => transform;
 
-        public Bullet(int startX, int startY, Transform target)
+        public Bullet(int startX, int startY, int bulletWidth, int bulletHeight, Transform target) : base(startX, startY, bulletWidth, bulletHeight)
         {
-            transform = new Transform(startX, startY, 16, 16);
 
             float deltaX = target.PosX - startX;
             float deltaY = target.PosY - startY;
@@ -21,7 +18,7 @@
             dy = deltaY / length;
         }
 
-        public void Update()
+        public override void Update()
         {
             transform.Translate((int)(dx * speed), (int)(dy * speed));
         }
@@ -31,7 +28,7 @@
             return transform.Overlaps(other);
         }
 
-        public void Render()
+        public override void Render()
         {
             Engine.Draw("assets/bullet.png", transform.PosX, transform.PosY);
         }

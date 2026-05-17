@@ -1,14 +1,18 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Weapon
+    public class Weapon //Weapon n o necesita heredar de GameObject porque es una clase que se ocupa
+                        //de agregar balas a una lista en el transform del player 
     {
         private Transform ownerTransform;
         private float timer = 0;
         private float fireRate = 1f;
 
+        private int bulletWidth = 16;
+        private int bulletHeight = 16;
+
         public Weapon(Transform ownerTransform)
         {
-            this.ownerTransform = ownerTransform;
+            this.ownerTransform = ownerTransform; //transform del player
         }
 
         public void Update()
@@ -28,33 +32,37 @@
 
             if (target == null) return;
 
-            Bullet bullet = new Bullet(ownerTransform.PosX, ownerTransform.PosY, target);
+            Bullet bullet = new Bullet(ownerTransform.PosX, ownerTransform.PosY, bulletWidth, bulletHeight, target);
             GameManager.Instance.LevelController.AddBullet(bullet);
         }
 
-        private Transform GetNearestEnemy()
+        private Transform GetNearestEnemy() //devuelve el transform del enemigo mas cercano
         {
-            List<Enemy> enemies = GameManager.Instance.LevelController.EnemyList;
-
-            if (enemies.Count == 0) return null;
-
             Transform nearest = null;
-            float nearestDistance = float.MaxValue;
+            float nearestDistance = float.MaxValue; //atributos afuera del metodo para que se reconozcan
 
-            for (int i = 0; i < enemies.Count; i++)
+            if (GameManager.Instance.LevelController.GameObjectsList.Count == 0) return null; //nos aseguramos que haya algo
+
+            for (int i = 0; i < GameManager.Instance.LevelController.GameObjectsList.Count; i++) //recorremos la lista de GameObjects
             {
-                float deltaX = enemies[i].Transform.PosX - ownerTransform.PosX;
-                float deltaY = enemies[i].Transform.PosY - ownerTransform.PosY;
-                float distance = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                GameObject enemy = GameManager.Instance.LevelController.GameObjectsList[i]; //guardamos al GameObject actual en
+                                                                                            //una veriable de tipo GameObject (aislamos una
+                                                                                            //de la lista para usarla)
 
-                if (distance < nearestDistance)
+                if(enemy is Enemy) //nos aseguramos que ese objeto sea realmente una bala para calcular su distancia
                 {
-                    nearestDistance = distance;
-                    nearest = enemies[i].Transform;
+                    float deltaX = enemy.Transform.PosX - ownerTransform.PosX;
+                    float deltaY = enemy.Transform.PosY - ownerTransform.PosY;
+                    float distance = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                    if (distance < nearestDistance)
+                    {
+                        nearestDistance = distance;
+                        nearest = enemy.Transform;
+                    }
                 }
             }
-
-            return nearest;
+            return nearest; //devuelve el valor de el Enemy mas cercano
         }
     }
 }

@@ -17,7 +17,7 @@
 
         public bool IsDead()
         {
-            return hp <= 0;
+            return hp <= 0; // devuelve true cuando hp es 0 o menor
         }
     }
 }

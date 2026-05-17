@@ -1,11 +1,13 @@
-﻿namespace ProyectoSDL2.Engine.Scripts
+﻿using System.Runtime.Intrinsics.X86;
+
+namespace ProyectoSDL2.Engine.Scripts
 {
     public class LevelController
     {
         private Player player;
-        private List<Enemy> enemyList = new List<Enemy>();
-        private List<Bullet> bulletList = new List<Bullet>();
-        public List<Enemy> EnemyList => enemyList;
+
+        private List<GameObject> gameObjectsList = new List<GameObject>();
+        public List<GameObject> GameObjectsList => gameObjectsList;
 
         private float spawnTimer = 0;
         private float spawnInterval = 4f;
@@ -14,12 +16,13 @@
         private int enemiesKilled = 0;
         private int enemiesToWin = 20;
 
-        public Player Player => player;
-        public List<Bullet> BulletList => bulletList;
+        private int playerWidth = 64; private int playerHeight = 64;
+        private int enemyWidth = 64; private int enemyHeight = 64;
 
+        public Player Player => player;
         public void Start()
         {
-            player = new Player(500, 400);
+            player = new Player(500, 400, playerWidth, playerHeight);
             SpawnWave();
         }
 
@@ -27,11 +30,11 @@
         {
             player.Update();
 
-            UpdateEnemies();
-            UpdateBullets();
+            UpdateGameObjects();
 
             CheckCollisions();
             HandleSpawnTimer();
+            CleanupDestroyedObjects();
         }
 
         public void Render()
@@ -40,14 +43,9 @@
 
             player.Render();
 
-            for (int i = 0; i < enemyList.Count; i++)
+            for (int i = 0; i < gameObjectsList.Count; i++)
             {
-                enemyList[i].Render();
-            }
-
-            for (int i = 0; i < bulletList.Count; i++)
-            {
-                bulletList[i].Render();
+                gameObjectsList[i].Render();
             }
 
             Engine.Show();
@@ -55,7 +53,7 @@
 
         // ── Spawn ────────────────────────────────────────────────
 
-        private void HandleSpawnTimer()
+        private void HandleSpawnTimer() //reloj del spawner
         {
             spawnTimer += Program.DeltaTime;
 
@@ -72,25 +70,17 @@
             {
                 int x = 100 + i * 120;
                 int y = 100;
-                enemyList.Add(new Enemy(x, y));
+                gameObjectsList.Add(new Enemy(x, y, enemyWidth, enemyHeight)); // spawnea enemigos
             }
         }
 
         // ── Update helpers ───────────────────────────────────────
 
-        private void UpdateEnemies()
+        private void UpdateGameObjects()
         {
-            for (int i = 0; i < enemyList.Count; i++)
+            for (int i = 0; i < gameObjectsList.Count; i++)
             {
-                enemyList[i].Update();
-            }
-        }
-
-        private void UpdateBullets()
-        {
-            for (int i = 0; i < bulletList.Count; i++)
-            {
-                bulletList[i].Update();
+                gameObjectsList[i].Update();
             }
         }
 
@@ -101,25 +91,55 @@
             CheckBulletsVsEnemies();
             CheckEnemiesVsPlayer();
         }
-
+        private void CleanupDestroyedObjects() //metodo clave para limpiar ciclos for y que no haya overflow
+        {
+            // Acá sí recorremos de atrás hacia adelante para borrar de forma segura
+            for (int i = gameObjectsList.Count - 1; i >= 0; i--)
+            {
+                if (gameObjectsList[i].IsPendingDestroy)
+                {
+                    gameObjectsList.RemoveAt(i);
+                }
+            }
+        }
         private void CheckBulletsVsEnemies()
         {
-            for (int i = bulletList.Count - 1; i >= 0; i--)
+            for (int i = 0; i < gameObjectsList.Count; i++) //recorremos la lista de GameObjects
             {
-                for (int j = enemyList.Count - 1; j >= 0; j--)
-                {
-                    if (bulletList[i].Overlaps(enemyList[j].Transform))
-                    {
-                        enemyList[j].Health.GetDamaged();
-                        bulletList.RemoveAt(i);
+                GameObject bulletObject = gameObjectsList[i]; //guardamos el GameObjectActual en una veriable de tipo GameObject
 
-                        if (enemyList[j].Health.IsDead())
+                
+                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue;// Si ya está marcada para destruir
+                                                                                         // o no es una bala, pasamos de largo
+
+                Bullet bullet = (Bullet)bulletObject; //convretimos ese GameObject en una bala posta
+                                                      //(para acceder a sus metodos)
+
+                for (int j = 0; j < gameObjectsList.Count; j++)
+                {
+                    GameObject enemyObject = gameObjectsList[j]; //recorremos por segunda vez para ver enemigos
+
+
+                    if (enemyObject.IsPendingDestroy || !(enemyObject is Enemy)) continue;
+                    Enemy enemy = (Enemy)enemyObject; //convretimos ese GameObject en un enemigo posta
+
+                    // Evaluamos la colisión
+                    if (bullet.Overlaps(enemyObject.Transform))
+                    {
+                        enemy.Health.GetDamaged();
+
+                        // En vez de borrar en caliente, los MARCAMOS
+                        bulletObject.IsPendingDestroy = true;
+
+                        if (enemy.Health.IsDead())
                         {
-                            enemyList.RemoveAt(j);
+                            enemyObject.IsPendingDestroy = true;
                             enemiesKilled++;
                             CheckWinCondition();
                         }
 
+                        // Como la bala ya chocó y se va a destruir, rompemos el bucle J 
+                        // para evaluar la siguiente bala del bucle I
                         break;
                     }
                 }
@@ -128,12 +148,14 @@
 
         private void CheckEnemiesVsPlayer()
         {
-            for (int i = enemyList.Count - 1; i >= 0; i--)
+            for (int i = gameObjectsList.Count - 1; i >= 0; i--)
             {
-                if (enemyList[i].Transform.Overlaps(player.Transform))
+                GameObject enemyObject = gameObjectsList[i];
+
+                if (enemyObject.Transform.Overlaps(player.Transform) && enemyObject is Enemy)
                 {
                     player.Health.GetDamaged();
-                    enemyList.RemoveAt(i);
+                    gameObjectsList.RemoveAt(i);
                 }
             }
         }
@@ -149,7 +171,7 @@
        
         public void AddBullet(Bullet bullet)
         {
-            bulletList.Add(bullet);
+            gameObjectsList.Add(bullet);
         }
     }
 }
