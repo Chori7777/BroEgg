@@ -8,6 +8,7 @@
         private Weapon weapon;
         public Health Health => health;
 
+        
         public Player(int startPosX, int startPosY, int playerWidth, int playerHeight) : base(startPosX, startPosY, playerWidth, playerHeight)
         {
             health = new Health(10);

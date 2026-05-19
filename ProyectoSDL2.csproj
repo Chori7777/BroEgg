@@ -43,6 +43,12 @@
       <None Update="assets\PantallaDerrota.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="assets\PantallaTransicion.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="assets\PantallaVictoria.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="assets\powerup.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>

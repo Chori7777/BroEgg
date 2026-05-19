@@ -5,29 +5,50 @@ namespace ProyectoSDL2.Engine.Scripts
     public class LevelController
     {
         private Player player;
+        private HUD hud;
 
+  
         private List<GameObject> gameObjectsList = new List<GameObject>();
         public List<GameObject> GameObjectsList => gameObjectsList;
-
+        // Enemy Spawning
         private float spawnTimer = 0;
         private float spawnInterval = 4f;
         private int enemiesPerWave = 4;
-
-        private int enemiesKilled = 0;
-        private int enemiesToWin = 20;
+        
+       
 
         private int playerWidth = 64; private int playerHeight = 64;
         private int enemyWidth = 64; private int enemyHeight = 64;
 
+        // Sistema de rondas 
+        private int currentRound = 1;
+
+        private int enemiesKilled = 0;
+        private int enemiesToWin = 20;
+
+        private float timer = 0;
+
+        private float waveTime = 60f; 
+        public int EnemiesKilled => enemiesKilled;
+        public int EnemiesToWin => enemiesToWin;
+        public int CurrentRound => currentRound;
+
+        public int Timer => (int)timer;
+        
+
         public Player Player => player;
         public void Start()
         {
+            hud = new HUD(this);
             player = new Player(500, 400, playerWidth, playerHeight);
             SpawnWave();
         }
 
         public void Update()
         {
+
+            timer += Program.DeltaTime;
+            Engine.Debug("Enemigos por oleada: " + enemiesKilled);
             player.Update();
 
             UpdateGameObjects();
@@ -48,6 +69,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 gameObjectsList[i].Render();
             }
 
+            hud.Render();
             Engine.Show();
         }
 
@@ -68,8 +90,8 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             for (int i = 0; i < enemiesPerWave; i++)
             {
-                int x = 100 + i * 120;
-                int y = 100;
+                int x = Random.Shared.Next(100, 1900);
+                int y = Random.Shared.Next(100, 1000);
                 gameObjectsList.Add(new Enemy(x, y, enemyWidth, enemyHeight)); // spawnea enemigos
             }
         }
@@ -162,7 +184,12 @@ namespace ProyectoSDL2.Engine.Scripts
 
         private void CheckWinCondition()
         {
-            if (enemiesKilled >= enemiesToWin)
+            if (enemiesKilled >= enemiesToWin||timer>=waveTime)
+            {
+                GameManager.Instance.ChangeGameState(GAME_STATE.TRANSICION);
+                currentRound++;
+            }
+            if(currentRound>20)
             {
                 GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
             }
@@ -172,6 +199,21 @@ namespace ProyectoSDL2.Engine.Scripts
         public void AddBullet(Bullet bullet)
         {
             gameObjectsList.Add(bullet);
+        }
+
+
+        // Separado de lo q hicieron uds
+
+        public void NextLevel()
+        {
+            enemiesKilled = 0;
+            enemiesToWin += 10; // Aumenta la cantidad de enemigos necesarios para ganar en la siguiente ronda
+            Engine.Debug("Se completo la oleada, ahora en la ronda se necesitan " + enemiesToWin + " enemigos para ganar");
+            Engine.Debug("Ronda actual: " + currentRound);
+            timer = 0;
+            waveTime += 10f;
+           
+      
         }
     }
 }

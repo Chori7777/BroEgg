@@ -1,11 +1,14 @@
-﻿namespace ProyectoSDL2.Engine.Scripts
+﻿using System.Windows.Markup;
+
+namespace ProyectoSDL2.Engine.Scripts
 {
     public enum GAME_STATE
     {
         START = 0,
         GAME = 1,
-        WIN = 2,
-        END = 3
+        TRANSICION = 2,
+        WIN = 3,
+        END = 4
     }
 
     public class GameManager
@@ -61,9 +64,20 @@
                         Restart();
                     }
                     break;
+                case GAME_STATE.TRANSICION:
+                    if(Engine.KeyPress(Engine.KEY_X))
+                    {
+                        Continue();
+                    }
+                    break;
             }
         }
-
+        
+        public void Continue()
+        {
+            levelController.NextLevel();
+            gameState = GAME_STATE.GAME;
+        }
         public void Render()
         {
             switch (gameState)
@@ -76,6 +90,11 @@
 
                 case GAME_STATE.GAME:
                     levelController.Render();
+                    break;
+                case GAME_STATE.TRANSICION:
+                    Engine.Clear();
+                    Engine.Draw("assets/PantallaTransicion.png", 0, 0);
+                    Engine.Show();
                     break;
 
                 case GAME_STATE.WIN:

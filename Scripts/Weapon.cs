@@ -5,7 +5,7 @@
     {
         private Transform ownerTransform;
         private float timer = 0;
-        private float fireRate = 1f;
+        private float fireRate = 0.5f;
 
         private int bulletWidth = 16;
         private int bulletHeight = 16;
