@@ -5,7 +5,7 @@
         private PlayerInput input;
         private Health health;
        
-        private Weapon weapon;
+        private DefaultWeapon weapon;
         public Health Health => health;
 
         
@@ -13,7 +13,7 @@
         {
             health = new Health(10);
             input = new PlayerInput(transform);
-            weapon = new Weapon(transform);
+            weapon = new DefaultWeapon(transform);
         }
 
         public override void Update()

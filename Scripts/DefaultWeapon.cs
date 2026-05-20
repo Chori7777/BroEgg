@@ -1,21 +1,21 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Weapon //Weapon n o necesita heredar de GameObject porque es una clase que se ocupa
-                        //de agregar balas a una lista en el transform del player 
+    public class DefaultWeapon : WeaponDad, IWeapon //Weapon n o necesita heredar de GameObject porque es una clase que se ocupa
+                                                    //de agregar balas a una lista en el transform del player 
     {
-        private Transform ownerTransform;
+
         private float timer = 0;
         private float fireRate = 0.5f;
 
         private int bulletWidth = 16;
         private int bulletHeight = 16;
 
-        public Weapon(Transform ownerTransform)
+        public DefaultWeapon(Transform ownerTransform) : base(ownerTransform)
         {
-            this.ownerTransform = ownerTransform; //transform del player
+
         }
 
-        public void Update()
+        public override void Update()
         {
             timer += Program.DeltaTime;
 
@@ -34,6 +34,16 @@
 
             Bullet bullet = new Bullet(ownerTransform.PosX, ownerTransform.PosY, bulletWidth, bulletHeight, target);
             GameManager.Instance.LevelController.AddBullet(bullet);
+        }
+
+        public int DoDamage()
+        {
+            int damage = 1;
+            return damage;
+        }
+        public float FireRate()
+        {
+            return fireRate;
         }
 
         private Transform GetNearestEnemy() //devuelve el transform del enemigo mas cercano

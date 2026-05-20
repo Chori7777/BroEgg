@@ -168,7 +168,7 @@ namespace ProyectoSDL2.Engine
             return click;
         }
 
-        public static void Initialize(int w = 1920, int h = 1080)
+        public static void Initialize(int w = 1280, int h = 720)
         {
             // Initilizes SDL.
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)

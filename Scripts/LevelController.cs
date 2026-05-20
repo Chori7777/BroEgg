@@ -48,7 +48,7 @@ namespace ProyectoSDL2.Engine.Scripts
         {
 
             timer += Program.DeltaTime;
-            Engine.Debug("Enemigos por oleada: " + enemiesKilled);
+           
             player.Update();
 
             UpdateGameObjects();

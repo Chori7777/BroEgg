@@ -487,3 +487,5 @@ C:\Users\thiag\Documents\GitHub\BroEgg\obj\Debug\net9.0\ProyectoSDL2.genruntimec
 C:\Users\thiag\Documents\GitHub\BroEgg\obj\Debug\net9.0\ref\ProyectoSDL2.dll
 C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\PantallaVictoria.png
 C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\PantallaTransicion.png
+C:\BroEgg\bin\Debug\net9.0\assets\PantallaTransicion.png
+C:\BroEgg\bin\Debug\net9.0\assets\PantallaVictoria.png
