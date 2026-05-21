@@ -6,8 +6,9 @@
         private Transform playerTransform;
         private int speed = 2;
 
-        public EnemyMovement(Transform enemyTransform, Transform playerTransform)
+        public EnemyMovement(Transform enemyTransform, Transform playerTransform, int velEn)
         {
+            this.speed = velEn;
             transform = enemyTransform;
             this.playerTransform = playerTransform;
         }

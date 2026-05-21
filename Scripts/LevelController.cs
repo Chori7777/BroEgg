@@ -90,9 +90,10 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             for (int i = 0; i < enemiesPerWave; i++)
             {
-                int x = Random.Shared.Next(100, 1900);
-                int y = Random.Shared.Next(100, 1000);
-                gameObjectsList.Add(new Enemy(x, y, enemyWidth, enemyHeight)); // spawnea enemigos
+                int x = Random.Shared.Next(100, 1200);
+                int y = Random.Shared.Next(100, 700);
+                gameObjectsList.Add(EnemyFactory.CreateEnemy(EnemyFactory.TypeEnemy.BasicEnemy, x, y, currentRound)); // spawnea enemigos
+               
             }
         }
 
@@ -148,12 +149,12 @@ namespace ProyectoSDL2.Engine.Scripts
                     // Evaluamos la colisión
                     if (bullet.Overlaps(enemyObject.Transform))
                     {
-                        enemy.Health.GetDamaged();
+                        enemy.StatsEnemy.GetDamaged();
 
                         // En vez de borrar en caliente, los MARCAMOS
                         bulletObject.IsPendingDestroy = true;
 
-                        if (enemy.Health.IsDead())
+                        if (enemy.StatsEnemy.IsDead())
                         {
                             enemyObject.IsPendingDestroy = true;
                             enemiesKilled++;
@@ -176,7 +177,8 @@ namespace ProyectoSDL2.Engine.Scripts
 
                 if (enemyObject.Transform.Overlaps(player.Transform) && enemyObject is Enemy)
                 {
-                    player.Health.GetDamaged();
+                    Enemy enemy = (Enemy)enemyObject;
+                    player.PlayerStats.GetDamaged(enemy.StatsEnemy.DmgEnemy);
                     gameObjectsList.RemoveAt(i);
                 }
             }

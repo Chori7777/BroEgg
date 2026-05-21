@@ -46,6 +46,18 @@
       <None Update="assets\enemy\BasicEnemy_3.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="assets\enemy\TankEnemy_0.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="assets\enemy\TankEnemy_1.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="assets\enemy\TankEnemy_2.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="assets\enemy\TankEnemy_3.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
       <None Update="assets\fondo.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>

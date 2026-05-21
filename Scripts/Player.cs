@@ -3,17 +3,19 @@
     public class Player : GameObject
     {
         private PlayerInput input;
-        private Health health;
+        private PlayerStats playerstats;
+        public PlayerStats PlayerStats => playerstats;
+       
        
         private DefaultWeapon weapon;
         private Animation animation;
-        public Health Health => health;
+       
 
         private bool facingRight = false;
 
         public Player(int startPosX, int startPosY, int playerWidth, int playerHeight) : base(startPosX, startPosY, playerWidth, playerHeight)
         {
-            health = new Health(10);
+            playerstats = new PlayerStats();
             input = new PlayerInput(transform);
             weapon = new DefaultWeapon(transform);
 
@@ -36,7 +38,7 @@
             
 
 
-            if (health.IsDead())
+            if (playerstats.IsDead())
             {
                 GameManager.Instance.ChangeGameState(GAME_STATE.END);
             }

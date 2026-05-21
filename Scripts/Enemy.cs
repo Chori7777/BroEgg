@@ -2,22 +2,19 @@
 {
     public class Enemy : GameObject
     {
-        private Health health;
+       
         private EnemyMovement movement;
         private Animation animation;
+        private EnemyStats statsEnemy;
 
-        public Health Health => health;
+        public EnemyStats StatsEnemy => statsEnemy;
 
-        public Enemy(int startPosX, int startPosY, int enemyWidth, int enemyHeight)  : base(startPosX, startPosY, enemyWidth, enemyHeight)
+        public Enemy(int startPosX, int startPosY, int enemyWidth, int enemyHeight, List<Image> frames, EnemyStats enemyStats)  : base(startPosX, startPosY, enemyWidth, enemyHeight)
         {
-            health = new Health(2);
-            movement = new EnemyMovement(transform, GameManager.Instance.LevelController.Player.Transform);
+            this.statsEnemy = enemyStats;
+            movement = new EnemyMovement(transform, GameManager.Instance.LevelController.Player.Transform, statsEnemy.MoveSpeedEnemy);
 
-            List<Image> frames = new List<Image>();
-            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_0.png"));
-            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_1.png"));
-            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_2.png"));
-            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_3.png"));
+            
             animation = new Animation(frames, 0.1f);
         }
 
