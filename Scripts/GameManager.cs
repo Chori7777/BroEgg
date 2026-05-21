@@ -84,7 +84,7 @@ namespace ProyectoSDL2.Engine.Scripts
             {
                 case GAME_STATE.START:
                     Engine.Clear();
-                    Engine.Draw("assets/MainMenu.png", 0, 0);
+                    Engine.Draw("assets/Screens/SplashScreen.png", 0, 0);
                     Engine.Show();
                     break;
 
@@ -93,19 +93,19 @@ namespace ProyectoSDL2.Engine.Scripts
                     break;
                 case GAME_STATE.TRANSICION:
                     Engine.Clear();
-                    Engine.Draw("assets/PantallaTransicion.png", 0, 0);
+                    Engine.Draw("assets/Screens/ScreenPayStats.png", 0, 0);
                     Engine.Show();
                     break;
 
                 case GAME_STATE.WIN:
                     Engine.Clear();
-                    Engine.Draw("assets/PantallaVictoria.png", 0, 0);
+                    Engine.Draw("assets/Screens/ScreenWinner.png", 0, 0);
                     Engine.Show();
                     break;
 
                 case GAME_STATE.END:
                     Engine.Clear();
-                    Engine.Draw("assets/PantallaDerrota.png", 0, 0);
+                    Engine.Draw("assets/Screens/ScreenLose.png", 0, 0);
                     Engine.Show();
                     break;
             }

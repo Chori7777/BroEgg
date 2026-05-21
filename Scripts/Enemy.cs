@@ -14,10 +14,10 @@
             movement = new EnemyMovement(transform, GameManager.Instance.LevelController.Player.Transform);
 
             List<Image> frames = new List<Image>();
-            frames.Add(Engine.LoadImage("assets/enemy/0.png"));
-            frames.Add(Engine.LoadImage("assets/enemy/1.png"));
-            frames.Add(Engine.LoadImage("assets/enemy/2.png"));
-            frames.Add(Engine.LoadImage("assets/enemy/3.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_0.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_1.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_2.png"));
+            frames.Add(Engine.LoadImage("assets/enemy/BasicEnemy_3.png"));
             animation = new Animation(frames, 0.1f);
         }
 

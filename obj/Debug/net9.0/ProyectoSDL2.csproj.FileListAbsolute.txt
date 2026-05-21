@@ -489,3 +489,15 @@ C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\PantallaVictoria.
 C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\PantallaTransicion.png
 C:\BroEgg\bin\Debug\net9.0\assets\PantallaTransicion.png
 C:\BroEgg\bin\Debug\net9.0\assets\PantallaVictoria.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\BasicEnemy_0.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\BasicEnemy_1.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\BasicEnemy_2.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\BasicEnemy_3.png
+C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_0.png
+C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_1.png
+C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_2.png
+C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_3.png
+C:\BroEgg\bin\Debug\net9.0\assets\Screens\ScreenLose.png
+C:\BroEgg\bin\Debug\net9.0\assets\Screens\ScreenPayStats.png
+C:\BroEgg\bin\Debug\net9.0\assets\Screens\ScreenWinner.png
+C:\BroEgg\bin\Debug\net9.0\assets\Screens\SplashScreen.png

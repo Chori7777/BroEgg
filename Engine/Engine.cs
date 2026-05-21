@@ -331,7 +331,29 @@ namespace ProyectoSDL2.Engine
                 SDL.SDL_RendererFlip.SDL_FLIP_NONE
             );
         }
-        
+
+        public static void DrawFlipped(Image img, int x, int y, bool flipX)
+        {
+            IntPtr texture = img.Pointer;
+
+            int w, h, b;
+            uint c;
+
+            SDL.SDL_QueryTexture(texture, out c, out b, out w, out h);
+
+            SDL.SDL_Rect dest = new SDL.SDL_Rect 
+            { x = x, y = y, w = w, h = h };
+
+            SDL.SDL_Point center = new SDL.SDL_Point 
+            { x = w / 2, y = h / 2 };
+
+            SDL.SDL_RendererFlip flip = flipX
+                ? SDL.SDL_RendererFlip.SDL_FLIP_HORIZONTAL
+                : SDL.SDL_RendererFlip.SDL_FLIP_NONE;
+
+            SDL.SDL_RenderCopyEx(renderer, texture, IntPtr.Zero, ref dest, 0.0, ref center, flip);
+        }
+
         public static void MousePosition(out int mouseX, out int mouseY)
         {
             SDL.SDL_GetMouseState(out mouseX, out mouseY);

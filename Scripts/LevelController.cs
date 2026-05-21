@@ -189,7 +189,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 GameManager.Instance.ChangeGameState(GAME_STATE.TRANSICION);
                 currentRound++;
             }
-            if(currentRound>20)
+            if(currentRound>10)
             {
                 GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
             }
