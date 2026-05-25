@@ -1,149 +1,204 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\BroEgg\\",
+  "WorkspaceRootPath": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\proyectosdl2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:proyectosdl2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\weapondad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:weapondad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\defaultweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\defaultweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\iweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\iweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\iweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\levelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\defaultweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\defaultweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\weapondad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:weapondad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\shotgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\shotgun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\broegg\\scripts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\pistol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\pistol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\wavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\wavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\subfusil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\subfusil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\statsscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\statsscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemystats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\soldierenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\soldierenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\fastenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\fastenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\assets\\bullet.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:assets\\bullet.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:engine\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\tankenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\tankenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\basicenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\basicenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\hud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\expsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\expsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\proyectosdl2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:proyectosdl2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|c:\\users\\thiag\\documents\\github\\broegg\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DABE7CE-A186-431F-BB46-DA9D6275E9B3}|ProyectoSDL2.csproj|solutionrelative:scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 169,
       "DocumentGroups": [
         {
           "DockedWidth": 232,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Program.cs",
               "RelativeDocumentMoniker": "Scripts\\Program.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Program.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Program.cs",
               "RelativeToolTip": "Scripts\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwB4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T16:40:12.804Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAA4wGsAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAuwI8AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-29T19:48:48.354Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 6,
               "Title": "GameObject.cs",
-              "DocumentMoniker": "C:\\BroEgg\\GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\GameObject.cs",
               "RelativeDocumentMoniker": "GameObject.cs",
-              "ToolTip": "C:\\BroEgg\\GameObject.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\GameObject.cs",
               "RelativeToolTip": "GameObject.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-17T04:13:42.7Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LevelController.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\LevelController.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\LevelController.cs",
               "RelativeDocumentMoniker": "Scripts\\LevelController.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\LevelController.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\LevelController.cs",
               "RelativeToolTip": "Scripts\\LevelController.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAowFgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAkwFEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-29T20:17:43.462Z",
               "IsPinned": true,
@@ -151,63 +206,337 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 3,
               "Title": "DefaultWeapon.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\DefaultWeapon.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\DefaultWeapon.cs",
               "RelativeDocumentMoniker": "Scripts\\DefaultWeapon.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\DefaultWeapon.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\DefaultWeapon.cs",
               "RelativeToolTip": "Scripts\\DefaultWeapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T19:09:37.863Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "WeaponDad.cs",
-              "DocumentMoniker": "C:\\BroEgg\\WeaponDad.cs",
-              "RelativeDocumentMoniker": "WeaponDad.cs",
-              "ToolTip": "C:\\BroEgg\\WeaponDad.cs",
-              "RelativeToolTip": "WeaponDad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T19:36:31.764Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EnemyStats.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\EnemyStats.cs",
-              "RelativeDocumentMoniker": "Scripts\\EnemyStats.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\EnemyStats.cs",
-              "RelativeToolTip": "Scripts\\EnemyStats.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwCcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T19:14:06.226Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "WeaponDad.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\WeaponDad.cs",
+              "RelativeDocumentMoniker": "WeaponDad.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\WeaponDad.cs",
+              "RelativeToolTip": "WeaponDad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T19:36:31.764Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "PlayerStats.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\PlayerStats.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\PlayerStats.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerStats.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\PlayerStats.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\PlayerStats.cs",
               "RelativeToolTip": "Scripts\\PlayerStats.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAiwCYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAkwDkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-21T19:03:49.449Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Shotgun.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Shotgun.cs",
+              "RelativeDocumentMoniker": "Scripts\\Shotgun.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Shotgun.cs",
+              "RelativeToolTip": "Scripts\\Shotgun.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwA4AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:08:43.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Player.cs",
+              "RelativeToolTip": "Scripts\\Player.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAmwHIAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T16:39:10.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LevelManager.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\LevelManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\LevelManager.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\LevelManager.cs",
+              "RelativeToolTip": "Scripts\\LevelManager.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEYAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T00:29:07.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Bullet.cs",
+              "RelativeDocumentMoniker": "Scripts\\Bullet.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Bullet.cs",
+              "RelativeToolTip": "Scripts\\Bullet.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T16:48:45.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pistol.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Pistol.cs",
+              "RelativeDocumentMoniker": "Scripts\\Pistol.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Pistol.cs",
+              "RelativeToolTip": "Scripts\\Pistol.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:07:28.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IWeapon.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\IWeapon.cs",
+              "RelativeDocumentMoniker": "Scripts\\IWeapon.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\IWeapon.cs",
+              "RelativeToolTip": "Scripts\\IWeapon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T19:11:18.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WaveData.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\WaveData.cs",
+              "RelativeDocumentMoniker": "Scripts\\WaveData.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\WaveData.cs",
+              "RelativeToolTip": "Scripts\\WaveData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T23:12:01.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Subfusil.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Subfusil.cs",
+              "RelativeDocumentMoniker": "Scripts\\Subfusil.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Subfusil.cs",
+              "RelativeToolTip": "Scripts\\Subfusil.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwCMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T03:55:33.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "StatsScreen.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\StatsScreen.cs",
+              "RelativeDocumentMoniker": "Scripts\\StatsScreen.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\StatsScreen.cs",
+              "RelativeToolTip": "Scripts\\StatsScreen.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowFAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T00:53:16.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PlayerInput.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\PlayerInput.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlayerInput.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\PlayerInput.cs",
+              "RelativeToolTip": "Scripts\\PlayerInput.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T17:30:58.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EnemyStats.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyStats.cs",
+              "RelativeDocumentMoniker": "Scripts\\EnemyStats.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyStats.cs",
+              "RelativeToolTip": "Scripts\\EnemyStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T19:14:06.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemy.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Enemy.cs",
+              "RelativeToolTip": "Scripts\\Enemy.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwDkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T16:39:40.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EnemyBullet.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyBullet.cs",
+              "RelativeDocumentMoniker": "Scripts\\EnemyBullet.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyBullet.cs",
+              "RelativeToolTip": "Scripts\\EnemyBullet.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDIAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T03:22:53.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EnemyFactory.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyFactory.cs",
+              "RelativeDocumentMoniker": "Scripts\\EnemyFactory.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyFactory.cs",
+              "RelativeToolTip": "Scripts\\EnemyFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T18:59:55.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SoldierEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\SoldierEnemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\SoldierEnemy.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\SoldierEnemy.cs",
+              "RelativeToolTip": "Scripts\\SoldierEnemy.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAmwBsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T03:22:05.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FastEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\FastEnemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\FastEnemy.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\FastEnemy.cs",
+              "RelativeToolTip": "Scripts\\FastEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T03:22:21.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "bullet.png",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\assets\\bullet.png",
+              "RelativeDocumentMoniker": "assets\\bullet.png",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\assets\\bullet.png",
+              "RelativeToolTip": "assets\\bullet.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-05-25T04:28:13.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Engine\\Engine.cs",
+              "RelativeDocumentMoniker": "Engine\\Engine.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Engine\\Engine.cs",
+              "RelativeToolTip": "Engine\\Engine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T23:22:43.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TankEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\TankEnemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\TankEnemy.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\TankEnemy.cs",
+              "RelativeToolTip": "Scripts\\TankEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T03:23:30.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BasicEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\BasicEnemy.cs",
+              "RelativeDocumentMoniker": "Scripts\\BasicEnemy.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\BasicEnemy.cs",
+              "RelativeToolTip": "Scripts\\BasicEnemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T03:14:30.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HUD.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\HUD.cs",
+              "RelativeDocumentMoniker": "Scripts\\HUD.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\HUD.cs",
+              "RelativeToolTip": "Scripts\\HUD.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T01:24:52.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ExpSystem.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\ExpSystem.cs",
+              "RelativeDocumentMoniker": "Scripts\\ExpSystem.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\ExpSystem.cs",
+              "RelativeToolTip": "Scripts\\ExpSystem.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T22:41:19.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "ProyectoSDL2.csproj",
-              "DocumentMoniker": "C:\\BroEgg\\ProyectoSDL2.csproj",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\ProyectoSDL2.csproj",
               "RelativeDocumentMoniker": "ProyectoSDL2.csproj",
-              "ToolTip": "C:\\BroEgg\\ProyectoSDL2.csproj",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\ProyectoSDL2.csproj",
               "RelativeToolTip": "ProyectoSDL2.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -215,114 +544,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IWeapon.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\IWeapon.cs",
-              "RelativeDocumentMoniker": "Scripts\\IWeapon.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\IWeapon.cs",
-              "RelativeToolTip": "Scripts\\IWeapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T19:11:18.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EnemyFactory.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\EnemyFactory.cs",
-              "RelativeDocumentMoniker": "Scripts\\EnemyFactory.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\EnemyFactory.cs",
-              "RelativeToolTip": "Scripts\\EnemyFactory.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBsAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T18:59:55.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HUD.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\HUD.cs",
-              "RelativeDocumentMoniker": "Scripts\\HUD.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\HUD.cs",
-              "RelativeToolTip": "Scripts\\HUD.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T01:24:52.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Engine.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Engine\\Engine.cs",
-              "RelativeDocumentMoniker": "Engine\\Engine.cs",
-              "ToolTip": "C:\\BroEgg\\Engine\\Engine.cs",
-              "RelativeToolTip": "Engine\\Engine.cs",
-              "ViewState": "AgIAAEcBAAAAAAAAAAAQwFsBAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T23:22:43.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enemy.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Enemy.cs",
-              "RelativeToolTip": "Scripts\\Enemy.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAsAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T16:39:40.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 30,
               "Title": "Animation.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Animation.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Animation.cs",
               "RelativeDocumentMoniker": "Scripts\\Animation.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Animation.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Animation.cs",
               "RelativeToolTip": "Scripts\\Animation.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T01:06:54.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-14T01:06:54.981Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Bullet.cs",
-              "RelativeDocumentMoniker": "Scripts\\Bullet.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Bullet.cs",
-              "RelativeToolTip": "Scripts\\Bullet.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAArwBkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:48:45.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 29,
               "Title": "EnemyMovement.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\EnemyMovement.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyMovement.cs",
               "RelativeDocumentMoniker": "Scripts\\EnemyMovement.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\EnemyMovement.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\EnemyMovement.cs",
               "RelativeToolTip": "Scripts\\EnemyMovement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T19:09:24.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T19:09:24.55Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 33,
               "Title": "Health.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Health.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Health.cs",
               "RelativeDocumentMoniker": "Scripts\\Health.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Health.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Health.cs",
               "RelativeToolTip": "Scripts\\Health.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -330,36 +580,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PlayerInput.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\PlayerInput.cs",
-              "RelativeDocumentMoniker": "Scripts\\PlayerInput.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\PlayerInput.cs",
-              "RelativeToolTip": "Scripts\\PlayerInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T17:30:58.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Scripts\\Player.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Player.cs",
-              "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowCcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T16:39:10.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 31,
               "Title": "Transform.cs",
-              "DocumentMoniker": "C:\\BroEgg\\Scripts\\Transform.cs",
+              "DocumentMoniker": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Transform.cs",
               "RelativeDocumentMoniker": "Scripts\\Transform.cs",
-              "ToolTip": "C:\\BroEgg\\Scripts\\Transform.cs",
+              "ToolTip": "C:\\Users\\thiag\\Documents\\GitHub\\BroEgg\\Scripts\\Transform.cs",
               "RelativeToolTip": "Scripts\\Transform.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAcwCMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -1,4 +1,4 @@
-﻿namespace ProyectoSDL2.Engine.Scripts
+namespace ProyectoSDL2.Engine.Scripts
 {
     public class Transform
     {
@@ -7,8 +7,16 @@
         private int width;
         private int height;
 
-        public int PosX => posX;
-        public int PosY => posY;
+        public int PosX 
+        { 
+            get => posX; 
+            set => posX = value; 
+        }
+        public int PosY 
+        { 
+            get => posY; 
+            set => posY = value; 
+        }
         public int Width => width;
         public int Height => height;
 

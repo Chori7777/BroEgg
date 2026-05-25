@@ -8,15 +8,20 @@ namespace ProyectoSDL2.Engine.Scripts
         GAME = 1,
         TRANSICION = 2,
         WIN = 3,
-        END = 4
+        END = 4,
+        PAUSE= 5,
     }
 
     public class GameManager
     {
+        Font font;
         static GameManager instance;
         private GAME_STATE gameState = GAME_STATE.START;
         private LevelController levelController = new LevelController();
+        private StatsScreen statsScreen;
 
+        private bool wasEscPressedLastFrame = false;
+        private bool wasPPressedLastFrame = false; 
         public LevelController LevelController { get { return levelController; } } //por aca se accede al levelController
 
         static public GameManager Instance
@@ -34,10 +39,16 @@ namespace ProyectoSDL2.Engine.Scripts
         public void Start()
         {
             levelController.Start();
+             font = Engine.LoadFont("Fonts/arial.ttf", 24);
+            statsScreen = new StatsScreen(levelController.Player.PlayerStats, levelController.LevelManager.ExpSystem);
         }
 
         public void Update()
         {
+            // Declaramos la variable FUERA del switch para que esté en todos los cases
+            bool isEscPressedNow = Engine.KeyPress(Engine.KEY_ESC);
+            bool isPPressedNow = Engine.KeyPress(Engine.KEY_P); // Usamos P para pausar/despausar
+
             switch (gameState)
             {
                 case GAME_STATE.START:
@@ -48,6 +59,11 @@ namespace ProyectoSDL2.Engine.Scripts
                     break;
 
                 case GAME_STATE.GAME:
+                  
+                    if (isPPressedNow && !wasPPressedLastFrame)
+                    {
+                        gameState = GAME_STATE.PAUSE;
+                    }
                     levelController.Update();
                     break;
 
@@ -65,17 +81,35 @@ namespace ProyectoSDL2.Engine.Scripts
                     }
                     break;
                 case GAME_STATE.TRANSICION:
-                    if(Engine.KeyPress(Engine.KEY_X))
+                    statsScreen.Update();
+                    if (Engine.KeyPress(Engine.KEY_X))
                     {
                         Continue();
                     }
                     break;
+                case GAME_STATE.PAUSE:
+                   
+                    if (isPPressedNow && !wasPPressedLastFrame)
+                    {
+                        gameState = GAME_STATE.GAME;
+                    }
+               
+                    if (isEscPressedNow && !wasEscPressedLastFrame)
+                    {
+                        Program.isGameRunning = false;
+                    }
+                    break;
             }
+
+            // Actualizamos los flags al FINAL del Update()
+            wasEscPressedLastFrame = isEscPressedNow;
+            wasPPressedLastFrame = isPPressedNow;
         }
-        
+
         public void Continue()
         {
             levelController.NextLevel();
+      
             gameState = GAME_STATE.GAME;
         }
         public void Render()
@@ -93,7 +127,9 @@ namespace ProyectoSDL2.Engine.Scripts
                     break;
                 case GAME_STATE.TRANSICION:
                     Engine.Clear();
-                    Engine.Draw("assets/Screens/ScreenPayStats.png", 0, 0);
+                 
+                    statsScreen.Render();
+                  
                     Engine.Show();
                     break;
 
@@ -108,6 +144,16 @@ namespace ProyectoSDL2.Engine.Scripts
                     Engine.Draw("assets/Screens/ScreenLose.png", 0, 0);
                     Engine.Show();
                     break;
+                case GAME_STATE.PAUSE:
+                    Engine.Clear();
+                    
+                    levelController.Render();
+  
+                    Engine.DrawText("PAUSA - P para continuar", 500, 350, 24, 255, 255, font);
+                    Engine.DrawText("ESC para salir", 520, 400, 20, 200, 200, font);
+
+                    Engine.Show();
+                    break;
             }
         }
 
@@ -120,6 +166,7 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             levelController = new LevelController();
             levelController.Start();
+            statsScreen = new StatsScreen(levelController.Player.PlayerStats, levelController.LevelManager.ExpSystem);
             gameState = GAME_STATE.GAME;
         }
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,10 @@ namespace ProyectoSDL2.Engine.Scripts
 {
     public interface IWeapon
     {
-        float FireRate();
-        int DoDamage();
+        float FireRate { get; }
+        int Damage { get; }
+        void Update();
+        void Render();
+        void UpdateFacing(bool isFacingRight);
     }
 }

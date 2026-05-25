@@ -1,16 +1,17 @@
-﻿namespace ProyectoSDL2.Engine.Scripts
+namespace ProyectoSDL2.Engine.Scripts
 {
-    public class DefaultWeapon : WeaponDad, IWeapon //Weapon n o necesita heredar de GameObject porque es una clase que se ocupa
-                                                    //de agregar balas a una lista en el transform del player 
+    public class DefaultWeapon : WeaponDad, IWeapon
     {
-
         private float timer = 0;
-        private float fireRate = 0.5f;
-
+        private float baseFireRate = 0.5f;
+        private int baseDamage = 1;
         private int bulletWidth = 16;
         private int bulletHeight = 16;
 
-        public DefaultWeapon(Transform ownerTransform) : base(ownerTransform)
+        public float FireRate => baseFireRate * (1f - playerStats.AttackSpeed / 100f);
+        public int Damage => baseDamage + playerStats.Damage;
+
+        public DefaultWeapon(Transform ownerTransform, PlayerStats playerStats) : base(ownerTransform, "assets/bullet.png", playerStats)
         {
 
         }
@@ -19,7 +20,7 @@
         {
             timer += Program.DeltaTime;
 
-            if (timer >= fireRate)
+            if (timer >= FireRate)
             {
                 Shoot();
                 timer = 0;
@@ -32,34 +33,24 @@
 
             if (target == null) return;
 
-            Bullet bullet = new Bullet(ownerTransform.PosX, ownerTransform.PosY, bulletWidth, bulletHeight, target);
+            int weaponX = GetWeaponX();
+            int weaponY = GetWeaponY();
+
+            Bullet bullet = new Bullet(weaponX, weaponY, bulletWidth, bulletHeight, target, playerStats, baseDamage);
             GameManager.Instance.LevelController.AddBullet(bullet);
         }
 
-        public int DoDamage()
-        {
-            int damage = 1;
-            return damage;
-        }
-        public float FireRate()
-        {
-            return fireRate;
-        }
-
-        private Transform GetNearestEnemy() //devuelve el transform del enemigo mas cercano
+        private Transform GetNearestEnemy()
         {
             Transform nearest = null;
-            float nearestDistance = float.MaxValue; //atributos afuera del metodo para que se reconozcan
+            float nearestDistance = float.MaxValue;
 
-            if (GameManager.Instance.LevelController.GameObjectsList.Count == 0) return null; //nos aseguramos que haya algo
+            if (GameManager.Instance.LevelController.GameObjectsList.Count == 0) return null;
 
-            for (int i = 0; i < GameManager.Instance.LevelController.GameObjectsList.Count; i++) //recorremos la lista de GameObjects
+            for (int i = 0; i < GameManager.Instance.LevelController.GameObjectsList.Count; i++)
             {
-                GameObject enemy = GameManager.Instance.LevelController.GameObjectsList[i]; //guardamos al GameObject actual en
-                                                                                            //una veriable de tipo GameObject (aislamos una
-                                                                                            //de la lista para usarla)
-
-                if(enemy is Enemy) //nos aseguramos que ese objeto sea realmente una bala para calcular su distancia
+                GameObject enemy = GameManager.Instance.LevelController.GameObjectsList[i];
+                if (enemy is Enemy)
                 {
                     float deltaX = enemy.Transform.PosX - ownerTransform.PosX;
                     float deltaY = enemy.Transform.PosY - ownerTransform.PosY;
@@ -72,7 +63,22 @@
                     }
                 }
             }
-            return nearest; //devuelve el valor de el Enemy mas cercano
+            return nearest;
+        }
+
+        public override void Render()
+        {
+            int weaponX = GetWeaponX();
+            int weaponY = GetWeaponY();
+            
+            if (facingRight)
+            {
+                Engine.Draw(weaponSprite, weaponX, weaponY);
+            }
+            else
+            {
+                Engine.DrawFlipped(weaponSprite, weaponX, weaponY, true);
+            }
         }
     }
 }

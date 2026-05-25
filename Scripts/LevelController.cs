@@ -1,4 +1,4 @@
-﻿using System.Runtime.Intrinsics.X86;
+using System.Runtime.Intrinsics.X86;
 
 namespace ProyectoSDL2.Engine.Scripts
 {
@@ -6,62 +6,74 @@ namespace ProyectoSDL2.Engine.Scripts
     {
         private Player player;
         private HUD hud;
-
-  
-        private List<GameObject> gameObjectsList = new List<GameObject>();
-        public List<GameObject> GameObjectsList => gameObjectsList;
-        // Enemy Spawning
-        private float spawnTimer = 0;
-        private float spawnInterval = 4f;
-        private int enemiesPerWave = 4;
-        
-       
+        private LevelManager levelManager;
 
         private int playerWidth = 64; private int playerHeight = 64;
         private int enemyWidth = 64; private int enemyHeight = 64;
 
-        // Sistema de rondas 
-        private int currentRound = 1;
+        private List<GameObject> enemyBulletsList = new List<GameObject>();
 
-        private int enemiesKilled = 0;
-        private int enemiesToWin = 20;
+        private List<GameObject> gameObjectsList = new List<GameObject>();
+        public List<GameObject> GameObjectsList => gameObjectsList;
 
-        private float timer = 0;
-
-        private float waveTime = 60f; 
-        public int EnemiesKilled => enemiesKilled;
-        public int EnemiesToWin => enemiesToWin;
-        public int CurrentRound => currentRound;
-
-        public int Timer => (int)timer;
-        
+        private Image backgroundImage;
+        private Image redFlashImage;
+        public LevelManager LevelManager => levelManager;
 
         public Player Player => player;
+        
+        private float screenFlashTimer;
+        private bool isScreenFlashing;
+
+
         public void Start()
         {
+            backgroundImage = Engine.LoadImage("assets/Background.png"); 
+            redFlashImage = Engine.LoadImage("assets/RedFlash.png");
             hud = new HUD(this);
             player = new Player(500, 400, playerWidth, playerHeight);
-            SpawnWave();
+            levelManager = new LevelManager(this);
+            levelManager.StartWave();
         }
 
         public void Update()
         {
-
-            timer += Program.DeltaTime;
-           
             player.Update();
 
             UpdateGameObjects();
 
+            UpdateEnemyBullets();
+            
             CheckCollisions();
-            HandleSpawnTimer();
+
+            CheckEnemyBulletsVsPlayer();
+
+            levelManager.UpdateWave();
+
             CleanupDestroyedObjects();
+
+            CleanupEnemyBullets();  
+
+            if (isScreenFlashing)
+            {
+                screenFlashTimer -= Program.DeltaTime;
+                if (screenFlashTimer <= 0)
+                {
+                    isScreenFlashing = false;
+                }
+            }
+        }
+
+        private void TriggerScreenFlash()
+        {
+            isScreenFlashing = true;
+            screenFlashTimer = 0.2f;
         }
 
         public void Render()
         {
             Engine.Clear();
-
+            Engine.Draw(backgroundImage, 0, 0); 
             player.Render();
 
             for (int i = 0; i < gameObjectsList.Count; i++)
@@ -69,33 +81,26 @@ namespace ProyectoSDL2.Engine.Scripts
                 gameObjectsList[i].Render();
             }
 
+            for (int i = 0; i < enemyBulletsList.Count; i++)
+            {
+                enemyBulletsList[i].Render();
+            }
+
             hud.Render();
+
+            if (isScreenFlashing)
+            {
+                Engine.Draw(redFlashImage, 0, 0);
+            }
+
             Engine.Show();
         }
 
-        // ── Spawn ────────────────────────────────────────────────
 
-        private void HandleSpawnTimer() //reloj del spawner
-        {
-            spawnTimer += Program.DeltaTime;
 
-            if (spawnTimer >= spawnInterval)
-            {
-                SpawnWave();
-                spawnTimer = 0;
-            }
-        }
 
-        private void SpawnWave()
-        {
-            for (int i = 0; i < enemiesPerWave; i++)
-            {
-                int x = Random.Shared.Next(100, 1200);
-                int y = Random.Shared.Next(100, 700);
-                gameObjectsList.Add(EnemyFactory.CreateEnemy(EnemyFactory.TypeEnemy.BasicEnemy, x, y, currentRound)); // spawnea enemigos
-               
-            }
-        }
+
+
 
         // ── Update helpers ───────────────────────────────────────
 
@@ -127,42 +132,39 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         private void CheckBulletsVsEnemies()
         {
-            for (int i = 0; i < gameObjectsList.Count; i++) //recorremos la lista de GameObjects
+            for (int i = 0; i < gameObjectsList.Count; i++)
             {
-                GameObject bulletObject = gameObjectsList[i]; //guardamos el GameObjectActual en una veriable de tipo GameObject
+                GameObject bulletObject = gameObjectsList[i];
+                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue;
 
-                
-                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue;// Si ya está marcada para destruir
-                                                                                         // o no es una bala, pasamos de largo
-
-                Bullet bullet = (Bullet)bulletObject; //convretimos ese GameObject en una bala posta
-                                                      //(para acceder a sus metodos)
+                Bullet bullet = (Bullet)bulletObject;
 
                 for (int j = 0; j < gameObjectsList.Count; j++)
                 {
-                    GameObject enemyObject = gameObjectsList[j]; //recorremos por segunda vez para ver enemigos
-
-
+                    GameObject enemyObject = gameObjectsList[j];
                     if (enemyObject.IsPendingDestroy || !(enemyObject is Enemy)) continue;
-                    Enemy enemy = (Enemy)enemyObject; //convretimos ese GameObject en un enemigo posta
+                    Enemy enemy = (Enemy)enemyObject;
 
-                    // Evaluamos la colisión
                     if (bullet.Overlaps(enemyObject.Transform))
                     {
-                        enemy.StatsEnemy.GetDamaged();
+                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage();
+                        enemy.StatsEnemy.GetDamaged(finalDamage);
+                        enemy.TriggerFlash();
 
-                        // En vez de borrar en caliente, los MARCAMOS
+                        if (lifeStealAmount > 0)
+                        {
+                            player.PlayerStats.RestoreHealth(lifeStealAmount);
+                        }
+
                         bulletObject.IsPendingDestroy = true;
 
                         if (enemy.StatsEnemy.IsDead())
                         {
                             enemyObject.IsPendingDestroy = true;
-                            enemiesKilled++;
+                            levelManager.OnEnemyKilled();
                             CheckWinCondition();
                         }
 
-                        // Como la bala ya chocó y se va a destruir, rompemos el bucle J 
-                        // para evaluar la siguiente bala del bucle I
                         break;
                     }
                 }
@@ -179,6 +181,8 @@ namespace ProyectoSDL2.Engine.Scripts
                 {
                     Enemy enemy = (Enemy)enemyObject;
                     player.PlayerStats.GetDamaged(enemy.StatsEnemy.DmgEnemy);
+                    player.TriggerFlash();
+                    TriggerScreenFlash();
                     gameObjectsList.RemoveAt(i);
                 }
             }
@@ -186,18 +190,60 @@ namespace ProyectoSDL2.Engine.Scripts
 
         private void CheckWinCondition()
         {
-            if (enemiesKilled >= enemiesToWin||timer>=waveTime)
+            if (levelManager.IsWaveComplete())
             {
-                GameManager.Instance.ChangeGameState(GAME_STATE.TRANSICION);
-                currentRound++;
+                if (levelManager.HasWon())
+                {
+                    GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
+                }
+                else
+                {
+                    GameManager.Instance.ChangeGameState(GAME_STATE.TRANSICION);
+                }
             }
-            if(currentRound>10)
+        }
+        public void AddEnemyBullet(EnemyBullet bullet)
+        {
+            enemyBulletsList.Add(bullet);
+        }
+
+        private void UpdateEnemyBullets()
+        {
+            for (int i = 0; i < enemyBulletsList.Count; i++)
             {
-                GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
+                enemyBulletsList[i].Update();
             }
         }
 
-       
+        private void CheckEnemyBulletsVsPlayer()
+        {
+            for (int i = enemyBulletsList.Count - 1; i >= 0; i--)
+            {
+                GameObject bulletObject = enemyBulletsList[i];
+                if (bulletObject.IsPendingDestroy || !(bulletObject is EnemyBullet)) continue;
+
+                EnemyBullet bullet = (EnemyBullet)bulletObject;
+
+                if (bullet.Overlaps(player.Transform))
+                {
+                    player.PlayerStats.GetDamaged(bullet.Damage);
+                    player.TriggerFlash();
+                    TriggerScreenFlash();
+                    bulletObject.IsPendingDestroy = true;
+                }
+            }
+        }
+
+        private void CleanupEnemyBullets()
+        {
+            for (int i = enemyBulletsList.Count - 1; i >= 0; i--)
+            {
+                if (enemyBulletsList[i].IsPendingDestroy)
+                {
+                    enemyBulletsList.RemoveAt(i);
+                }
+            }
+        }
         public void AddBullet(Bullet bullet)
         {
             gameObjectsList.Add(bullet);
@@ -208,12 +254,20 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public void NextLevel()
         {
-            enemiesKilled = 0;
-            enemiesToWin += 10; // Aumenta la cantidad de enemigos necesarios para ganar en la siguiente ronda
-            Engine.Debug("Se completo la oleada, ahora en la ronda se necesitan " + enemiesToWin + " enemigos para ganar");
-            Engine.Debug("Ronda actual: " + currentRound);
-            timer = 0;
-            waveTime += 10f;
+            levelManager.ClearEnemies();
+            levelManager.NextLevel();
+            player.PlayerStats.RestoreHealth();
+         
+            Engine.Debug("Ronda actual: " + LevelManager.CurrentRound);
+            if(!levelManager.HasWon())
+            {
+                levelManager.StartWave();
+
+            }
+            else
+            {
+                GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
+            }
            
       
         }
