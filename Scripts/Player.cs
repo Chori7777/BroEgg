@@ -10,6 +10,8 @@ namespace ProyectoSDL2.Engine.Scripts
         private int currentWeaponIndex;
         private IWeapon currentWeapon;
         private Animation animation;
+
+        public event Action OnPlayerDied; //public para que se llame desde LevelController
        
         private bool facingRight = false;
         private int lastWeaponLevel = 1;
@@ -70,10 +72,10 @@ namespace ProyectoSDL2.Engine.Scripts
             
             if (playerStats.IsDead())
             {
-                GameManager.Instance.ChangeGameState(GAME_STATE.END);
+                OnPlayerDied?.Invoke(); //inicia el evento
             }
         }
-
+        
         public void TriggerFlash()
         {
             isFlashing = true;

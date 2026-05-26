@@ -34,6 +34,8 @@ namespace ProyectoSDL2.Engine.Scripts
             player = new Player(500, 400, playerWidth, playerHeight);
             levelManager = new LevelManager(this);
             levelManager.StartWave();
+
+            player.OnPlayerDied += HandlePlayerDeath; //se suscribe el metodo al evento
         }
 
         public void Update()
@@ -181,7 +183,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 {
                     Enemy enemy = (Enemy)enemyObject;
                     player.PlayerStats.GetDamaged(enemy.StatsEnemy.DmgEnemy);
-                    player.TriggerFlash();
+                    player.TriggerFlash(); //sufre danio
                     TriggerScreenFlash();
                     gameObjectsList.RemoveAt(i);
                 }
@@ -268,8 +270,12 @@ namespace ProyectoSDL2.Engine.Scripts
             {
                 GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
             }
-           
-      
+        }
+
+        private void HandlePlayerDeath() //se ejecuta cuando el evento OnPlayerDied ocurre (playerSats.IsDeath() = true)
+        {
+            // Cambiamos el estado del juego a derrota
+            GameManager.Instance.ChangeGameState(GAME_STATE.END);
         }
     }
 }
