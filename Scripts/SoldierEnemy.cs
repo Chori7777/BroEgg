@@ -11,7 +11,7 @@
             : base(startPosX, startPosY, 100, 100, GetFrames(), new EnemyStats(
                 hpEnemy: 4 + (1 * wave),
                 dmgEnemy: 3 + (1 * wave),
-                moveSpeedEnemies: 4,
+                moveSpeedEnemies: 200f,
                 armorEnemies: 1 + (1 * wave)
               ))
         {

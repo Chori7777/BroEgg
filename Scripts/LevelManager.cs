@@ -50,25 +50,25 @@ namespace ProyectoSDL2.Engine.Scripts
             //EL PORCENTAJE DE ENEMIGOS TANQUE Y LOS ENEMIGOS SOLDADO
 
             //Oleada 1
-            waveDataList.Add(new WaveData(20, 60f, 95f, 0f, 5f, 0f,4));
+            waveDataList.Add(new WaveData(20, 20f, 95f, 0f, 5f, 90f,4));
             //Oleada 2
-            waveDataList.Add(new WaveData(25, 65f, 80f, 5f, 10f, 0f,4));
+            waveDataList.Add(new WaveData(25, 30f, 80f, 5f, 10f, 0f,4));
             //Oleada 3
-            waveDataList.Add(new WaveData(40, 75f, 70f, 5f, 15f, 5f,5));
+            waveDataList.Add(new WaveData(40, 40f, 70f, 5f, 15f, 5f,5));
             //Oleada 4
-            waveDataList.Add(new WaveData(45, 80f, 70f, 10f, 10f, 10f,5));
+            waveDataList.Add(new WaveData(45, 50f, 70f, 10f, 10f, 10f,5));
             //Oleada 5
-            waveDataList.Add(new WaveData(60, 85f, 60f, 15f, 15f, 10f,6));
+            waveDataList.Add(new WaveData(60, 60f, 60f, 15f, 15f, 10f,6));
             //Oleada 6
-            waveDataList.Add(new WaveData(65, 90f, 50f, 20f, 25f, 5f,6));
+            waveDataList.Add(new WaveData(65, 70f, 50f, 20f, 25f, 5f,6));
             //Oleada 7
-            waveDataList.Add(new WaveData(70, 105f, 45f, 25f, 10f, 20f,7));
+            waveDataList.Add(new WaveData(70, 80f, 45f, 25f, 10f, 20f,7));
             //Oleada 8
-            waveDataList.Add(new WaveData(75, 110f, 30f, 30f, 30f, 10f,7));
+            waveDataList.Add(new WaveData(75, 90f, 30f, 30f, 30f, 10f,7));
             //Oleada 9
-            waveDataList.Add(new WaveData(90, 115f, 25f, 25f, 25f, 25f,8));
+            waveDataList.Add(new WaveData(90, 90f, 25f, 25f, 25f, 25f,8));
             //Oleada 10
-            waveDataList.Add(new WaveData(100, 120f, 15f, 30f, 25f, 25f, 6));
+            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));
 
 
 

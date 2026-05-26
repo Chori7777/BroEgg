@@ -4,9 +4,9 @@
     {
         private Transform transform;
         private Transform playerTransform;
-        private int speed = 2;
+        private float speed = 2f;
 
-        public EnemyMovement(Transform enemyTransform, Transform playerTransform, int velEn)
+        public EnemyMovement(Transform enemyTransform, Transform playerTransform, float velEn)
         {
             this.speed = velEn;
             transform = enemyTransform;
@@ -25,7 +25,7 @@
             float dx = deltaX / length;
             float dy = deltaY / length;
 
-            transform.Translate((int)(dx * speed), (int)(dy * speed));
+            transform.Translate((int)(dx * speed * Program.DeltaTime), (int)(dy * speed * Program.DeltaTime));
         }
     }
 }

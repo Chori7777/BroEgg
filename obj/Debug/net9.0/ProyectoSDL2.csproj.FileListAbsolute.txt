@@ -527,3 +527,17 @@ C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\Pistol.png
 C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\Shotgun.png
 C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\Subfusil.png
 C:\Users\thiag\Documents\GitHub\BroEgg\bin\Debug\net9.0\assets\RedFlash.png
+C:\BroEgg\bin\Debug\net9.0\assets\Background.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemyBullet.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\FastEnemy.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\FastEnemy1.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\FastEnemy2.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\FastEnemy3.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\SoldierEnemy.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\SoldierEnemy1.png
+C:\BroEgg\bin\Debug\net9.0\assets\enemy\SoldierEnemy2.png
+C:\BroEgg\bin\Debug\net9.0\assets\PauseBackground.png
+C:\BroEgg\bin\Debug\net9.0\assets\Pistol.png
+C:\BroEgg\bin\Debug\net9.0\assets\RedFlash.png
+C:\BroEgg\bin\Debug\net9.0\assets\Shotgun.png
+C:\BroEgg\bin\Debug\net9.0\assets\Subfusil.png
