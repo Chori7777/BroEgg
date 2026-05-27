@@ -34,7 +34,7 @@ namespace ProyectoSDL2.Engine.Scripts
             posY += moveY;
         }
 
-        public bool Overlaps(Transform colision)
+        public bool Overlaps(Transform colision) //devuelve true si se cumple la colision AABB
         {
             return posX + width > colision.posX &&
                    posX < colision.posX + colision.width &&

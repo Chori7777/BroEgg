@@ -48,8 +48,6 @@ namespace ProyectoSDL2.Engine.Scripts
             
             CheckCollisions();
 
-            CheckEnemyBulletsVsPlayer();
-
             levelManager.UpdateWave();
 
             CleanupDestroyedObjects();
@@ -100,10 +98,6 @@ namespace ProyectoSDL2.Engine.Scripts
 
 
 
-
-
-
-
         // ── Update helpers ───────────────────────────────────────
 
         private void UpdateGameObjects()
@@ -120,26 +114,27 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             CheckBulletsVsEnemies();
             CheckEnemiesVsPlayer();
+            CheckEnemyBulletsVsPlayer();
         }
         private void CleanupDestroyedObjects() //metodo clave para limpiar ciclos for y que no haya overflow
         {
             // Acá sí recorremos de atrás hacia adelante para borrar de forma segura
             for (int i = gameObjectsList.Count - 1; i >= 0; i--)
             {
-                if (gameObjectsList[i].IsPendingDestroy)
+                if (gameObjectsList[i].IsPendingDestroy) //se fija si el currentGameObject esta esperando ser destruido
                 {
-                    gameObjectsList.RemoveAt(i);
+                    gameObjectsList.RemoveAt(i); //entonces lo remueve de la lista
                 }
             }
         }
         private void CheckBulletsVsEnemies()
         {
-            for (int i = 0; i < gameObjectsList.Count; i++)
+            for (int i = 0; i < gameObjectsList.Count; i++) 
             {
-                GameObject bulletObject = gameObjectsList[i];
-                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue;
+                GameObject bulletObject = gameObjectsList[i]; 
+                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue; 
 
-                Bullet bullet = (Bullet)bulletObject;
+                Bullet bullet = (Bullet)bulletObject; 
 
                 for (int j = 0; j < gameObjectsList.Count; j++)
                 {
@@ -149,25 +144,25 @@ namespace ProyectoSDL2.Engine.Scripts
 
                     if (bullet.Overlaps(enemyObject.Transform))
                     {
-                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage();
-                        enemy.StatsEnemy.GetDamaged(finalDamage);
-                        enemy.TriggerFlash();
+                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas
+                        enemy.StatsEnemy.GetDamaged(finalDamage); //se le manda el daño final al enemigo
+                        enemy.TriggerFlash(); 
 
                         if (lifeStealAmount > 0)
                         {
-                            player.PlayerStats.RestoreHealth(lifeStealAmount);
+                            player.PlayerStats.RestoreHealth(lifeStealAmount); //se le da vida al jugador con la funcion RestoreHealth
                         }
 
-                        bulletObject.IsPendingDestroy = true;
+                        bulletObject.IsPendingDestroy = true; //se avisa que esa bala que colisiono tiene que ser destruida
 
                         if (enemy.StatsEnemy.IsDead())
                         {
-                            enemyObject.IsPendingDestroy = true;
-                            levelManager.OnEnemyKilled();
-                            CheckWinCondition();
+                            enemyObject.IsPendingDestroy = true; //se avisa que el enemigo tiene que ser destruido
+                            levelManager.OnEnemyKilled(); //da EXP y aumenta en 1 el contador de enemigos matados
+                            enemy.Die(); //Activa el evento
                         }
 
-                        break;
+                        break; //rompemos todos los bucles para volver a empezar
                     }
                 }
             }
@@ -190,7 +185,7 @@ namespace ProyectoSDL2.Engine.Scripts
             }
         }
 
-        private void CheckWinCondition()
+        private void CheckWinCondition() //se fija si al terminar la ronda, ya gano y carga la WIN o si todavia el jugador no gano y tiene que cargar la StatsScreen
         {
             if (levelManager.IsWaveComplete())
             {
@@ -276,6 +271,11 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             // Cambiamos el estado del juego a derrota
             GameManager.Instance.ChangeGameState(GAME_STATE.END);
+        }
+
+        public void HandleEnemyDied()
+        {
+            CheckWinCondition();
         }
     }
 }

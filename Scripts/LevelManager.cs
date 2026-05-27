@@ -72,8 +72,6 @@ namespace ProyectoSDL2.Engine.Scripts
 
 
 
-
-
             // Y bueno se pueden agregar mas 
 
         }
@@ -134,18 +132,21 @@ namespace ProyectoSDL2.Engine.Scripts
 
                 var enemyType = GetRandomEnemyType();
 
-                levelController.GameObjectsList.Add(EnemyFactory.CreateEnemy(enemyType, x, y, currentWaveIndex + 1));
+                Enemy enemy = EnemyFactory.CreateEnemy(enemyType, x, y, currentWaveIndex + 1);
 
+                enemy.OnEnemyDied += OnEnemyKilled;        // <-- LevelManager se suscribe
+                enemy.OnEnemyDied += levelController.HandleEnemyDied; // <-- LevelController también
 
+                levelController.GameObjectsList.Add(enemy);
             }
         }
         //  ────────────  Asesinato  ────────────────────────────────────────────────
         public void OnEnemyKilled()
         {
             enemiesKilled++;
-            expSystem.AddExp(20f);
+            expSystem.AddExp(40f);
         }
-        public bool IsWaveComplete()
+        public bool IsWaveComplete() //termina la oleada si se matan a los suficientes enemigos o si el timer 
         {
             return enemiesKilled >= CurrentWaveData.EnemiesToKill || waveTimer >= CurrentWaveData.WaveTime;
         }
@@ -167,7 +168,7 @@ namespace ProyectoSDL2.Engine.Scripts
             }
         }
 
-        public bool HasWon()
+        public bool HasWon() //se gana si la oleada actual es menor a la total y si la oleada termino
         {
             return currentWaveIndex >= waveDataList.Count - 1 && IsWaveComplete();
         }

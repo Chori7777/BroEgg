@@ -15,10 +15,6 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             this.levelController = levelController;
             hudFont = new Font("assets/arial.ttf", 34);
-
-
-           
-        
         }
         public void Render()
         {
@@ -39,11 +35,7 @@ namespace ProyectoSDL2.Engine.Scripts
             {
                 Engine.DrawText("Puntos: " + expSystem.AvailableStatPoints, 10, 550, 0, 255, 0, hudFont);
             }
-
-
         }
-
-
     }
 }
 

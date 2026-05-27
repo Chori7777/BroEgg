@@ -108,11 +108,11 @@ namespace ProyectoSDL2.Engine.Scripts
                     currentWeaponIndex = 2;
                     break;
             }
-            currentWeapon = weapons[currentWeaponIndex];
+            currentWeapon = weapons[currentWeaponIndex]; //el arma es igual a la currentPosition en la lista de IWeapon
         }
         public override void Render()
         {
-            if (!isFlashing || (int)(flashTimer * 10) % 2 == 0)
+            if (!isFlashing || (int)(flashTimer * 10) % 2 == 0) //locura esto chicos eh, seguro que chori no sabe ni como funciona, y si lo sabe me lo cojo
             {
                 Engine.DrawFlipped(animation.CurrentFrame, transform.PosX, transform.PosY, facingRight);
             }

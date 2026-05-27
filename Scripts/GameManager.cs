@@ -22,15 +22,15 @@ namespace ProyectoSDL2.Engine.Scripts
 
         private bool wasEscPressedLastFrame = false;
         private bool wasPPressedLastFrame = false; 
-        public LevelController LevelController { get { return levelController; } } //por aca se accede al levelController
+        public LevelController LevelController { get { return levelController; } } //por aca se accede al levelController privado
 
-        static public GameManager Instance
+        static public GameManager Instance //constructor static para que se acceda desde cualquier lado
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new GameManager();
+                    instance = new GameManager(); //solo se hace new GameManager si no existe
                 }
                 return instance;
             }
