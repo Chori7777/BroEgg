@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uT2uv5T2Log=",
+  "dgSpecHash": "d3zUOtI5uZ8=",
   "success": true,
-  "projectFilePath": "C:\\BroEgg\\ProyectoSDL2.csproj",
+  "projectFilePath": "C:\\Users\\nicom\\Documents\\GitHub\\BroEgg\\ProyectoSDL2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\cvilb\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
+    "C:\\Users\\nicom\\.nuget\\packages\\sayers.sdl2.core\\1.0.11\\sayers.sdl2.core.1.0.11.nupkg.sha512"
   ],
   "logs": []
 }

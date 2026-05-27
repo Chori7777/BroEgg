@@ -19,7 +19,7 @@ namespace ProyectoSDL2.Engine.Scripts
         public float ExpToNextLevel => expToNextLevel;
         public int AvailableStatPoints => availableStatPoints;
 
-        //Sumar XP desde otro script
+        //Sumar XP desde levelManager.OnEnemyKilled()
         public void AddExp(float amount)
         {
             currentExp += amount;

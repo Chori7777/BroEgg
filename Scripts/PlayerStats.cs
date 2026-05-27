@@ -11,7 +11,7 @@ namespace ProyectoSDL2.Engine.Scripts
         //Stats
 
         private int health; // CurrentHealth
-        private int maxHealth = 999;
+        private int maxHealth = 75;
         private int damage = 3;
         private int armor = 0;
         private float lifeSteal = 0;
@@ -83,7 +83,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public bool UpgradeDamage()
         {
-            damage += 3;
+            damage += 1;
             return true;
         }
 

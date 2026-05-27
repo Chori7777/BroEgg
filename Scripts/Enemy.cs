@@ -10,6 +10,7 @@ namespace ProyectoSDL2.Engine.Scripts
         private bool isFlashing;
 
         public EnemyStats StatsEnemy => statsEnemy;
+        public event Action OnEnemyDied;
 
         public Enemy(int startPosX, int startPosY, int enemyWidth, int enemyHeight, List<Image> frames, EnemyStats enemyStats)
             : base(startPosX, startPosY, enemyWidth, enemyHeight)
@@ -45,6 +46,13 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             Transform playerTransform = GameManager.Instance.LevelController.Player.Transform;
             facingRight = playerTransform.PosX > transform.PosX;
+        }
+
+        public void Die()
+        {
+            IsPendingDestroy = true;
+            OnEnemyDied?.Invoke(); // dispara el evento
+            Engine.Debug("evento OnEnemyDied disparado");
         }
 
         public override void Render()

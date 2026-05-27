@@ -9,7 +9,8 @@ namespace ProyectoSDL2.Engine.Scripts
     public class StatsScreen
     {
         private PlayerStats playerStats;
-        private ExpSystem expSystem;
+        private ExpSystem expSystem; 
+        public ExpSystem ExpSystem => expSystem;
         private int selectedOption = 0;
         private string[] options = 
             {

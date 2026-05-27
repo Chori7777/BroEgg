@@ -1,4 +1,4 @@
-﻿namespace ProyectoSDL2.Engine.Scripts
+namespace ProyectoSDL2.Engine.Scripts
 {
     public class EnemyMovement
     {
@@ -25,7 +25,7 @@
             float dx = deltaX / length;
             float dy = deltaY / length;
 
-            transform.Translate((int)(dx * speed * Program.DeltaTime), (int)(dy * speed * Program.DeltaTime));
+            transform.Translate(dx * speed * Program.DeltaTime, dy * speed * Program.DeltaTime);
         }
     }
 }

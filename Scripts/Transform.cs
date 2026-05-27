@@ -2,19 +2,19 @@ namespace ProyectoSDL2.Engine.Scripts
 {
     public class Transform
     {
-        private int posX;
-        private int posY;
+        private float posX;
+        private float posY;
         private int width;
         private int height;
 
         public int PosX 
         { 
-            get => posX; 
+            get => (int)posX; 
             set => posX = value; 
         }
         public int PosY 
         { 
-            get => posY; 
+            get => (int)posY; 
             set => posY = value; 
         }
         public int Width => width;
@@ -28,13 +28,13 @@ namespace ProyectoSDL2.Engine.Scripts
             this.height = height;
         }
 
-        public void Translate(int moveX, int moveY)
+        public void Translate(float moveX, float moveY)
         {
             posX += moveX;
             posY += moveY;
         }
 
-        public bool Overlaps(Transform colision)
+        public bool Overlaps(Transform colision) //devuelve true si se cumple la colision AABB
         {
             return posX + width > colision.posX &&
                    posX < colision.posX + colision.width &&

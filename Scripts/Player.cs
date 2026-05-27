@@ -10,6 +10,8 @@ namespace ProyectoSDL2.Engine.Scripts
         private int currentWeaponIndex;
         private IWeapon currentWeapon;
         private Animation animation;
+
+        public event Action OnPlayerDied; //public para que se llame desde LevelController
        
         private bool facingRight = false;
         private int lastWeaponLevel = 1;
@@ -70,10 +72,10 @@ namespace ProyectoSDL2.Engine.Scripts
             
             if (playerStats.IsDead())
             {
-                GameManager.Instance.ChangeGameState(GAME_STATE.END);
+                OnPlayerDied?.Invoke(); //inicia el evento
             }
         }
-
+        
         public void TriggerFlash()
         {
             isFlashing = true;
@@ -106,11 +108,11 @@ namespace ProyectoSDL2.Engine.Scripts
                     currentWeaponIndex = 2;
                     break;
             }
-            currentWeapon = weapons[currentWeaponIndex];
+            currentWeapon = weapons[currentWeaponIndex]; //el arma es igual a la currentPosition en la lista de IWeapon
         }
         public override void Render()
         {
-            if (!isFlashing || (int)(flashTimer * 10) % 2 == 0)
+            if (!isFlashing || (int)(flashTimer * 10) % 2 == 0) //locura esto chicos eh, seguro que chori no sabe ni como funciona, y si lo sabe me lo cojo
             {
                 Engine.DrawFlipped(animation.CurrentFrame, transform.PosX, transform.PosY, facingRight);
             }
