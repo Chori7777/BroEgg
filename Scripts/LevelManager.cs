@@ -50,7 +50,7 @@ namespace ProyectoSDL2.Engine.Scripts
             //EL PORCENTAJE DE ENEMIGOS TANQUE Y LOS ENEMIGOS SOLDADO
 
             //Oleada 1
-            waveDataList.Add(new WaveData(20, 20f, 95f, 0f, 5f, 90f,4));
+            waveDataList.Add(new WaveData(20, 20f, 95f, 1f, 10f, 5f,4));
             //Oleada 2
             waveDataList.Add(new WaveData(25, 30f, 80f, 5f, 10f, 0f,4));
             //Oleada 3

@@ -489,9 +489,7 @@ C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_0.png
 C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_1.png
 C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_2.png
 C:\BroEgg\bin\Debug\net9.0\assets\Player\Player_3.png
-C:\BroEgg\bin\Debug\net9.0\assets\Screens\ScreenLose.png
 C:\BroEgg\bin\Debug\net9.0\assets\Screens\ScreenPayStats.png
-C:\BroEgg\bin\Debug\net9.0\assets\Screens\ScreenWinner.png
 C:\BroEgg\bin\Debug\net9.0\assets\Screens\SplashScreen.png
 C:\BroEgg\bin\Debug\net9.0\assets\enemy\TankEnemy_0.png
 C:\BroEgg\bin\Debug\net9.0\assets\enemy\TankEnemy_1.png
@@ -541,3 +539,5 @@ C:\BroEgg\bin\Debug\net9.0\assets\Pistol.png
 C:\BroEgg\bin\Debug\net9.0\assets\RedFlash.png
 C:\BroEgg\bin\Debug\net9.0\assets\Shotgun.png
 C:\BroEgg\bin\Debug\net9.0\assets\Subfusil.png
+C:\BroEgg\bin\Debug\net9.0\assets\Screens\LoseScreen.png
+C:\BroEgg\bin\Debug\net9.0\assets\Screens\WinScreen.png

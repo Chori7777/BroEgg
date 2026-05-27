@@ -135,13 +135,13 @@ namespace ProyectoSDL2.Engine.Scripts
 
                 case GAME_STATE.WIN:
                     Engine.Clear();
-                    Engine.Draw("assets/Screens/ScreenWinner.png", 0, 0);
+                    Engine.Draw("assets/Screens/WinScreen.png", 0, 0);
                     Engine.Show();
                     break;
 
                 case GAME_STATE.END:
                     Engine.Clear();
-                    Engine.Draw("assets/Screens/ScreenLose.png", 0, 0);
+                    Engine.Draw("assets/Screens/LoseScreen.png", 0, 0);
                     Engine.Show();
                     break;
                 case GAME_STATE.PAUSE:
