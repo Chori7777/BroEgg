@@ -157,9 +157,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
                         if (enemy.StatsEnemy.IsDead())
                         {
-                            enemyObject.IsPendingDestroy = true; //se avisa que el enemigo tiene que ser destruido
-                            levelManager.OnEnemyKilled(); //da EXP y aumenta en 1 el contador de enemigos matados
-                            enemy.Die(); //Activa el evento
+                            enemy.Die(); //Activa el evento (que suma el contador y da EXP)
                         }
 
                         break; //rompemos todos los bucles para volver a empezar

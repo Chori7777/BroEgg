@@ -68,7 +68,7 @@ namespace ProyectoSDL2.Engine.Scripts
             //Oleada 9
             waveDataList.Add(new WaveData(90, 90f, 25f, 25f, 25f, 25f,8));
             //Oleada 10
-            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));
+            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 10));
 
 
 
@@ -128,7 +128,7 @@ namespace ProyectoSDL2.Engine.Scripts
             for (int i = 0; i < CurrentWaveData.EnemiesPerRound; i++)
             {
                 int x = Random.Shared.Next(100, 1200);
-                int y = Random.Shared.Next(100, 700);
+                int y = Random.Shared.Next(100, 600);
 
                 var enemyType = GetRandomEnemyType();
 
