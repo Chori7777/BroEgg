@@ -2,8 +2,8 @@
 {
     public class TankEnemy : Enemy
     {
-        public TankEnemy(int startPosX, int startPosY, int wave)
-            : base(startPosX, startPosY, 100, 100, GetFrames(), new EnemyStats(
+        public TankEnemy(int startPosX, int startPosY, int wave): base(startPosX, startPosY, 100, 100, GetFrames(), 
+            new EnemyStats(
                 hpEnemy: 10 + (5 * wave),
                 dmgEnemy: 2 + (1 * wave),
                 moveSpeedEnemies: 200f,
