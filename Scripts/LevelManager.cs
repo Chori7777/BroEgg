@@ -69,7 +69,7 @@ namespace ProyectoSDL2.Engine.Scripts
             waveDataList.Add(new WaveData(90, 90f, 25f, 25f, 25f, 25f,8));
             //Oleada 10
             waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));
-
+            
 
 
 
