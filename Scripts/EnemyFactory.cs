@@ -6,14 +6,16 @@
 
         public static Enemy CreateEnemy(TypeEnemy enemy, int x, int y, int wave)
         {
-            return enemy switch
+
+            switch (enemy)
             {
-                TypeEnemy.TankEnemy => new TankEnemy(x, y, wave),
-                TypeEnemy.BasicEnemy => new BasicEnemy(x, y, wave),
-                TypeEnemy.SoldierEnemy => new SoldierEnemy(x, y, wave),
-                TypeEnemy.FastEnemy => new FastEnemy(x, y, wave),
-                _ => null
-            };
+                case TypeEnemy.TankEnemy: return new TankEnemy(x, y, wave); break;
+                case TypeEnemy.BasicEnemy: return new BasicEnemy(x, y, wave); break;
+                case TypeEnemy.SoldierEnemy: return new SoldierEnemy(x, y, wave); break;
+                case TypeEnemy.FastEnemy: return new FastEnemy(x, y, wave); break;
+                default: return null;
+
+            }
         }
     }
 }

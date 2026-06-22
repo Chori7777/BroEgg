@@ -34,6 +34,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
             int weaponX = GetWeaponX();
             int weaponY = GetWeaponY();
+            
 
             for (int i = 0; i < pellets; i++)
             {
@@ -58,32 +59,6 @@ namespace ProyectoSDL2.Engine.Scripts
             );
             
             return new Bullet(startX, startY, bulletWidth, bulletHeight, fakeTarget, playerStats, baseDamage);
-        }
-
-        private Transform GetNearestEnemy()
-        {
-            Transform nearest = null;
-            float nearestDistance = float.MaxValue;
-
-            if (GameManager.Instance.LevelController.GameObjectsList.Count == 0) return null;
-
-            for (int i = 0; i < GameManager.Instance.LevelController.GameObjectsList.Count; i++)
-            {
-                GameObject enemy = GameManager.Instance.LevelController.GameObjectsList[i];
-                if (enemy is Enemy)
-                {
-                    float deltaX = enemy.Transform.PosX - ownerTransform.PosX;
-                    float deltaY = enemy.Transform.PosY - ownerTransform.PosY;
-                    float distance = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
-
-                    if (distance < nearestDistance)
-                    {
-                        nearestDistance = distance;
-                        nearest = enemy.Transform;
-                    }
-                }
-            }
-            return nearest;
         }
 
         public override void Render()

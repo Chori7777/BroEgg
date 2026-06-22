@@ -17,6 +17,7 @@ namespace ProyectoSDL2.Engine.Scripts
             get => (int)posY; 
             set => posY = value; 
         }
+
         public int Width => width;
         public int Height => height;
 

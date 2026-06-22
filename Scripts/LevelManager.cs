@@ -56,7 +56,7 @@ namespace ProyectoSDL2.Engine.Scripts
             //Oleada 3
             waveDataList.Add(new WaveData(40, 40f, 70f, 5f, 15f, 5f,5));
             //Oleada 4
-            waveDataList.Add(new WaveData(45, 50f, 70f, 10f, 10f, 10f,5));
+           /* waveDataList.Add(new WaveData(45, 50f, 70f, 10f, 10f, 10f,5));
             //Oleada 5
             waveDataList.Add(new WaveData(60, 60f, 60f, 15f, 15f, 10f,6));
             //Oleada 6
@@ -68,7 +68,7 @@ namespace ProyectoSDL2.Engine.Scripts
             //Oleada 9
             waveDataList.Add(new WaveData(90, 90f, 25f, 25f, 25f, 25f,8));
             //Oleada 10
-            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));
+            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));*/
             
 
 
@@ -80,7 +80,6 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public void StartWave()
         {
-            
             enemiesKilled = 0;
             waveTimer = 0;
             spawnTimer = 0;
@@ -134,10 +133,14 @@ namespace ProyectoSDL2.Engine.Scripts
 
                 var enemyType = GetRandomEnemyType();
 
-                levelController.GameObjectsList.Add(EnemyFactory.CreateEnemy(enemyType, x, y, currentWaveIndex + 1));
+                Enemy enemy = EnemyFactory.CreateEnemy(enemyType, x, y, currentWaveIndex + 1);
 
+                enemy.OnEnemyDied += OnEnemyKilled;                      // suma kills y da EXP
+                enemy.OnEnemyDied += levelController.HandleEnemyDied;    // chequea condición de victoria
 
+                levelController.GameObjectsList.Add(enemy);
             }
+            
         }
         //  ────────────  Asesinato  ────────────────────────────────────────────────
         public void OnEnemyKilled()
@@ -153,7 +156,6 @@ namespace ProyectoSDL2.Engine.Scripts
         public void NextLevel()
         {
             currentWaveIndex++;
-
         }
 
         public void ClearEnemies()

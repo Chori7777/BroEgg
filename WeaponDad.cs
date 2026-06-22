@@ -25,6 +25,32 @@ namespace ProyectoSDL2.Engine
         public abstract void Update();
         public abstract void Render();
 
+        protected Transform GetNearestEnemy()
+        {
+            Transform nearest = null;
+            float nearestDistance = float.MaxValue;
+
+            var list = GameManager.Instance.LevelController.GameObjectsList;
+            if (list.Count == 0) return null;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                GameObject obj = list[i];
+                if (obj is Enemy)
+                {
+                    float deltaX = obj.Transform.PosX - ownerTransform.PosX;
+                    float deltaY = obj.Transform.PosY - ownerTransform.PosY;
+                    float distance = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                    if (distance < nearestDistance)
+                    {
+                        nearestDistance = distance;
+                        nearest = obj.Transform;
+                    }
+                }
+            }
+            return nearest;
+        }
         public void UpdateFacing(bool isFacingRight)
         {
             facingRight = isFacingRight;
@@ -32,9 +58,7 @@ namespace ProyectoSDL2.Engine
 
         protected int GetWeaponX()
         {
-            return facingRight
-                ? ownerTransform.PosX + ownerTransform.Width - 10
-                : ownerTransform.PosX - 20;
+            return facingRight? ownerTransform.PosX + ownerTransform.Width - 10 : ownerTransform.PosX - 20;
         }
 
         protected int GetWeaponY()

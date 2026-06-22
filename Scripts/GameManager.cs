@@ -4,12 +4,12 @@ namespace ProyectoSDL2.Engine.Scripts
 {
     public enum GAME_STATE
     {
-        START = 0,
-        GAME = 1,
-        TRANSICION = 2,
-        WIN = 3,
-        END = 4,
-        PAUSE= 5,
+        START,
+        GAME,
+        TRANSICION,
+        WIN,
+        END,
+        PAUSE,
     }
 
     public class GameManager

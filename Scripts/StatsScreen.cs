@@ -71,7 +71,7 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             switch (option)
             {
-                case 0: playerStats.UpgradeMaxHealth(); break;
+                case 0: playerStats.UpgradeMaxHealth(); break; //aplico lo que quiero y evaluo el caso
                 case 1: playerStats.UpgradeDamage(); break;
                 case 2: playerStats.UpgradeArmor(); break;
                 case 3: playerStats.UpgradeLifeSteal(); break;
@@ -81,7 +81,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 case 7: playerStats.UpgradeMoveSpeed(); break;
                 case 8: playerStats.UpgradeWeapon(); break;
             }
-            expSystem.SpendStatPoint();
+            expSystem.SpendStatPoint(); //gasto puntos de mejora si es que tengo
         }
         public void Render()
         {

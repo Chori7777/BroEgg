@@ -6,9 +6,9 @@ namespace ProyectoSDL2.Engine.Scripts
         private PlayerStats playerStats;
         public PlayerStats PlayerStats => playerStats;
        
-        private List<IWeapon> weapons;
+        private List<IWeapon> weapons; //lista de interfaz de armas
         private int currentWeaponIndex;
-        private IWeapon currentWeapon;
+        private IWeapon currentWeapon; //se guarda el tipo de arma en una variable de tipo interfaz asi es compatible con todas las armas
         private Animation animation;
 
         public event Action OnPlayerDied; //public para que se llame desde LevelController
@@ -21,7 +21,7 @@ namespace ProyectoSDL2.Engine.Scripts
         public Player(int startPosX, int startPosY, int playerWidth, int playerHeight) : base(startPosX, startPosY, playerWidth, playerHeight)
         {
             playerStats = new PlayerStats();
-            input = new PlayerInput(transform, playerStats);
+            input = new PlayerInput(transform);
             
             weapons = new List<IWeapon>
             {

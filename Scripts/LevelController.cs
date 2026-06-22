@@ -158,8 +158,8 @@ namespace ProyectoSDL2.Engine.Scripts
                         if (enemy.StatsEnemy.IsDead())
                         {
                             enemy.Die(); //Activa el evento (que suma el contador y da EXP)
-                            HandleEnemyDied();
-                            levelManager.OnEnemyKilled();
+                            //HandleEnemyDied();
+                            //levelManager.OnEnemyKilled();
                         }
 
                         break; //rompemos todos los bucles para volver a empezar

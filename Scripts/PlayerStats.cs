@@ -38,7 +38,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public PlayerStats()
         {
-            health = maxHealth;
+            health = maxHealth; //empieza con la vida al maximo
         }
         public void RestoreHealth(int amount = 0)
         {

@@ -57,7 +57,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public override void Render()
         {
-            if (!isFlashing || (int)(flashTimer * 15) % 2 == 0)
+            if (!isFlashing || (flashTimer * 15) % 2 == 0)
             {
                 Engine.DrawFlipped(animation.CurrentFrame, transform.PosX, transform.PosY, !facingRight);
             }
