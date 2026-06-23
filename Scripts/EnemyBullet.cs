@@ -45,6 +45,7 @@
 
         public void Reset(int startX, int startY, Transform target, int damage) //para la interfaz IPoolable
         {
+            //Esto es para reutilizr la bala que esta en uso 
             Damage = damage;
             IsPendingDestroy = false;
             IsActive = true;

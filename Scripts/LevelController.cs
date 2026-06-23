@@ -124,7 +124,7 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         private void CleanupDestroyedObjects() //metodo clave para limpiar ciclos for y que no haya overflow
         {
-            for (int i = gameObjectsList.Count - 1; i >= 0; i--)
+            for (int i = gameObjectsList.Count - 1; i >= 0; i--) //El for lee desde el ultimo elemento hasta el primero
             {
                 if (gameObjectsList[i].IsPendingDestroy)
                 {
@@ -132,7 +132,7 @@ namespace ProyectoSDL2.Engine.Scripts
                     {
                         bulletPool.Return(bullet); // devuelve al pool
                     }
-                    gameObjectsList.RemoveAt(i);
+                    gameObjectsList.RemoveAt(i); //no se actualice mas
                 }
             }
         }
