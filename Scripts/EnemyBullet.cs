@@ -1,11 +1,14 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class EnemyBullet : GameObject
+    public class EnemyBullet : GameObject, IPoolable
     {
         private float dx;
         private float dy;
         private int speed = 5;
         public int Damage { get; private set; } //esto significa que puede ser leida publicamente pero modificada de forma privada
+        public bool IsActive { get; private set; }
+
+        public void Activate() => IsActive = true;
 
         public EnemyBullet(int startX, int startY, int bulletWidth, int bulletHeight, Transform target, int damage)
             : base(startX, startY, bulletWidth, bulletHeight)
@@ -39,11 +42,39 @@
                 IsPendingDestroy = true;
             }
         }
-        
+
+        public void Reset(int startX, int startY, Transform target, int damage) //para la interfaz IPoolable
+        {
+            Damage = damage;
+            IsPendingDestroy = false;
+            IsActive = true;
+
+            transform.PosX = startX;
+            transform.PosY = startY;
+
+            float deltaX = target.PosX - startX;
+            float deltaY = target.PosY - startY;
+            float length = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+
+            if (length == 0)
+            {
+                dx = 0;
+                dy = 0;
+                return;
+            }
+
+            dx = deltaX / length;
+            dy = deltaY / length;
+        }
 
         public bool Overlaps(Transform other)
         {
             return transform.Overlaps(other);
+        }
+        public void Deactivate()
+        {
+            IsActive = false;
+            IsPendingDestroy = false;
         }
 
         public override void Render()

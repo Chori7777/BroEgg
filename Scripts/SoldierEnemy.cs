@@ -46,7 +46,7 @@
                     StatsEnemy.DmgEnemy
                 );
 
-                GameManager.Instance.LevelController.AddEnemyBullet(bullet);
+               GameManager.Instance.LevelController.AddEnemyBullet(transform.PosX, transform.PosY, playerTransform, StatsEnemy.DmgEnemy);
                 shootTimer = 0f;
             }
         }

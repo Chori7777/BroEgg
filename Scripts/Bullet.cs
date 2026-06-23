@@ -1,6 +1,6 @@
 ﻿namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Bullet : GameObject
+    public class Bullet : GameObject, IPoolable
     {
         private float dx;
         private float dy;
@@ -9,6 +9,10 @@
         public int BaseDamage { get; private set; }
 
         public event Action<Bullet>? OnDeactivate; // evento para avisar al pool
+
+        public bool IsActive { get; private set; }
+
+        public void Activate() => IsActive = true;
 
         public Bullet(int startX, int startY, int bulletWidth, int bulletHeight, Transform target, PlayerStats playerStats, int baseDamage = 1)
             : base(startX, startY, bulletWidth, bulletHeight)
@@ -50,8 +54,8 @@
 
         public void Deactivate()
         {
-            IsPendingDestroy = true;
-            OnDeactivate?.Invoke(this); // avisa al pool que puede reciclarlo
+            IsActive = false;
+            IsPendingDestroy = false; // lo resetea para reutilizarlo
         }
 
         public override void Render()

@@ -1,4 +1,5 @@
 using System.Runtime.Intrinsics.X86;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoSDL2.Engine.Scripts
 {
@@ -25,7 +26,9 @@ namespace ProyectoSDL2.Engine.Scripts
         private float screenFlashTimer;
         private bool isScreenFlashing;
 
-        private BulletPool bulletPool = new BulletPool(20);
+        private Pool<Bullet> bulletPool = new Pool<Bullet>(20,() => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1));
+
+        private Pool<EnemyBullet> enemyBulletPool = new Pool<EnemyBullet>(20,() => new EnemyBullet(0, 0, 12, 12, new Transform(0, 0, 1, 1), 0));
 
         public void Start()
         {
@@ -119,12 +122,15 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         private void CleanupDestroyedObjects() //metodo clave para limpiar ciclos for y que no haya overflow
         {
-            // Acá sí recorremos de atrás hacia adelante para borrar de forma segura
             for (int i = gameObjectsList.Count - 1; i >= 0; i--)
             {
-                if (gameObjectsList[i].IsPendingDestroy) //se fija si el currentGameObject esta esperando ser destruido
+                if (gameObjectsList[i].IsPendingDestroy)
                 {
-                    gameObjectsList.RemoveAt(i); //entonces lo remueve de la lista
+                    if (gameObjectsList[i] is Bullet bullet)
+                    {
+                        bulletPool.Return(bullet); // devuelve al pool
+                    }
+                    gameObjectsList.RemoveAt(i);
                 }
             }
         }
@@ -199,11 +205,6 @@ namespace ProyectoSDL2.Engine.Scripts
                 }
             }
         }
-        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage) //para player
-        {
-            Bullet bullet = bulletPool.GetBullet(x, y, target, playerStats, baseDamage);
-            gameObjectsList.Add(bullet);
-        }
 
         private void UpdateEnemyBullets()
         {
@@ -233,11 +234,15 @@ namespace ProyectoSDL2.Engine.Scripts
         }
 
         private void CleanupEnemyBullets()
-        {  
+        {
             for (int i = enemyBulletsList.Count - 1; i >= 0; i--)
             {
                 if (enemyBulletsList[i].IsPendingDestroy)
                 {
+                    if (enemyBulletsList[i] is EnemyBullet bullet)
+                    {
+                        enemyBulletPool.Return(bullet); // devuelve al pool
+                    }
                     enemyBulletsList.RemoveAt(i);
                 }
             }
@@ -274,9 +279,18 @@ namespace ProyectoSDL2.Engine.Scripts
             CheckWinCondition();
         }
 
-        public void AddEnemyBullet(EnemyBullet bullet)
+        public void AddEnemyBullet(int x, int y, Transform target, int damage)
         {
+            EnemyBullet bullet = enemyBulletPool.Get();
+            bullet.Reset(x, y, target, damage);
             enemyBulletsList.Add(bullet);
+        }
+
+        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage) //para player
+        {
+            Bullet bullet = bulletPool.Get();
+            bullet.Reset(x, y, target, playerStats, baseDamage);
+            gameObjectsList.Add(bullet);
         }
     }
 }

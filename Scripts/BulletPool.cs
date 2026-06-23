@@ -6,58 +6,43 @@ using System.Threading.Tasks;
 
 namespace ProyectoSDL2.Engine.Scripts
 {
-    public class BulletPool
+    public class Pool<T> where T : IPoolable
     {
-        private List<Bullet> availableBullets = new List<Bullet>(); // objetos disponibles
-        private List<Bullet> bulletsInUse = new List<Bullet>();     // objetos en uso
+        private List<T> available = new List<T>();
+        private List<T> inUse = new List<T>();
+        private Func<T> createFunc; // función que sabe cómo crear un T
 
-        private int bulletWidth = 16;
-        private int bulletHeight = 16;
-
-        public BulletPool(int initialSize)
+        public Pool(int initialSize, Func<T> createFunc)
         {
-            // llenamos el pool con bullets "vacias" desde el arranque
+            this.createFunc = createFunc;
             for (int i = 0; i < initialSize; i++)
             {
-                CreateNewBullet();
+                available.Add(createFunc());
             }
         }
 
-        private void CreateNewBullet()
+        public T Get()
         {
-            Bullet bullet = new Bullet(0, 0, bulletWidth, bulletHeight, new Transform(0, 0, 1, 1), null, 1);
-            bullet.OnDeactivate += OnDeactivateHandler; // se suscribe al evento
-            availableBullets.Add(bullet);
-        }
-
-        public Bullet GetBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage)
-        {
-            Bullet bullet;
-
-            if (availableBullets.Count > 0)
+            T obj;
+            if (available.Count > 0)
             {
-                // saco del disponibles
-                bullet = availableBullets[availableBullets.Count - 1];
-                availableBullets.RemoveAt(availableBullets.Count - 1);
+                obj = available[available.Count - 1];
+                available.RemoveAt(available.Count - 1);
             }
             else
             {
-                // pool dinamico: si no hay, creo uno nuevo
-                CreateNewBullet();
-                bullet = availableBullets[0];
-                availableBullets.RemoveAt(0);
+                obj = createFunc(); // pool dinámico
             }
-
-            bullet.Reset(x, y, target, playerStats, baseDamage);
-            bulletsInUse.Add(bullet); // pasa a en uso
-            return bullet;
+            obj.Activate();
+            inUse.Add(obj);
+            return obj;
         }
 
-        private void OnDeactivateHandler(Bullet bullet)
+        public void Return(T obj)
         {
-            // cuando se desactiva, lo saco de en uso y lo mando a disponibles
-            bulletsInUse.Remove(bullet);
-            availableBullets.Add(bullet);
+            obj.Deactivate();
+            inUse.Remove(obj);
+            available.Add(obj);
         }
     }
 }
