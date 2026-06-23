@@ -7,13 +7,9 @@
         private int bulletWidth = 12;
         private int bulletHeight = 12;
 
-        public SoldierEnemy(int startPosX, int startPosY, int wave)
-            : base(startPosX, startPosY, 100, 100, GetFrames(), new EnemyStats(
-                hpEnemy: 4 + (1 * wave),
-                dmgEnemy: 3 + (1 * wave),
-                moveSpeedEnemies: 200f,
-                armorEnemies: 1 + (1 * wave)
-              ))
+        public SoldierEnemy(int startPosX, int startPosY, int wave) : base(startPosX, startPosY, 100, 100, GetFrames(), 
+
+            new EnemyStats(hpEnemy: 4 + (1 * wave),dmgEnemy: 3 + (1 * wave),moveSpeedEnemies: 200f,armorEnemies: 1 + (1 * wave)))
         {
         }
 
