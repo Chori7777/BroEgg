@@ -22,17 +22,19 @@ namespace ProyectoSDL2.Engine.Scripts
         public LevelManager LevelManager => levelManager;
 
         public Player Player => player;
-        
+
         private float screenFlashTimer;
         private bool isScreenFlashing;
 
-        private Pool<Bullet> bulletPool = new Pool<Bullet>(20,() => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1));
+        private Pool<Bullet> bulletPool = new Pool<Bullet>(20, () => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1));
 
-        private Pool<EnemyBullet> enemyBulletPool = new Pool<EnemyBullet>(20,() => new EnemyBullet(0, 0, 12, 12, new Transform(0, 0, 1, 1), 0));
+        //cuando hago => new bullet o => new EnemyBullet, le digo a la T del pool que va a ser
+
+        private Pool<EnemyBullet> enemyBulletPool = new Pool<EnemyBullet>(10, () => new EnemyBullet(0, 0, 12, 12, new Transform(0, 0, 1, 1), 0));
 
         public void Start()
         {
-            backgroundImage = Engine.LoadImage("assets/Background.png"); 
+            backgroundImage = Engine.LoadImage("assets/Background.png");
             redFlashImage = Engine.LoadImage("assets/RedFlash.png");
             hud = new HUD(this);
             player = new Player(500, 400, playerWidth, playerHeight);
@@ -49,14 +51,14 @@ namespace ProyectoSDL2.Engine.Scripts
             UpdateGameObjects();
 
             UpdateEnemyBullets();
-            
+
             CheckCollisions();
 
             levelManager.UpdateWave();
 
             CleanupDestroyedObjects();
 
-            CleanupEnemyBullets();  
+            CleanupEnemyBullets();
 
             if (isScreenFlashing)
             {
@@ -77,7 +79,7 @@ namespace ProyectoSDL2.Engine.Scripts
         public void Render()
         {
             Engine.Clear();
-            Engine.Draw(backgroundImage, 0, 0); 
+            Engine.Draw(backgroundImage, 0, 0);
             player.Render();
 
             for (int i = 0; i < gameObjectsList.Count; i++)
@@ -136,12 +138,12 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         private void CheckBulletsVsEnemies()
         {
-            for (int i = 0; i < gameObjectsList.Count; i++) 
+            for (int i = 0; i < gameObjectsList.Count; i++)
             {
-                GameObject bulletObject = gameObjectsList[i]; 
+                GameObject bulletObject = gameObjectsList[i];
                 if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue; //si algo de esto se cumple salta al siguiente bucle for
 
-                Bullet bullet = (Bullet)bulletObject; 
+                Bullet bullet = (Bullet)bulletObject;
 
                 for (int j = 0; j < gameObjectsList.Count; j++)
                 {
@@ -151,9 +153,9 @@ namespace ProyectoSDL2.Engine.Scripts
 
                     if (bulletObject.Transform.Overlaps(enemyObject.Transform))
                     {
-                        (int finalDamage, bool isCrit, int lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas con el uso de la tupla
+                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas con el uso de la tupla
                         enemy.StatsEnemy.GetDamaged(finalDamage); //se le manda el daño final al enemigo
-                        enemy.TriggerFlash(); 
+                        enemy.TriggerFlash();
 
                         if (lifeStealAmount > 0)
                         {
@@ -165,7 +167,7 @@ namespace ProyectoSDL2.Engine.Scripts
                         if (enemy.StatsEnemy.IsDead())
                         {
                             enemy.Die(); //Activa el evento (que suma el contador y da EXP)
-                           
+
                         }
 
                         break; //rompemos todos los bucles para volver a empezar
@@ -243,7 +245,7 @@ namespace ProyectoSDL2.Engine.Scripts
                     {
                         enemyBulletPool.Return(bullet); // devuelve al pool
                     }
-                    enemyBulletsList.RemoveAt(i);
+                    enemyBulletsList.RemoveAt(i); //hace que deje de actualizar la logica
                 }
             }
         }
@@ -256,9 +258,9 @@ namespace ProyectoSDL2.Engine.Scripts
             levelManager.ClearEnemies();
             levelManager.NextLevel();
             player.PlayerStats.RestoreHealth();
-         
+
             Engine.Debug("Ronda actual: " + LevelManager.CurrentRound);
-            if(!levelManager.HasWon())
+            if (!levelManager.HasWon())
             {
                 levelManager.StartWave();
             }
