@@ -22,7 +22,7 @@ namespace ProyectoSDL2.Engine.Scripts
         public float MoveSpeedEnemy => moveSpeedEnemy;
         public int ArmorEnemy => armorEnemy;
 
-       public EnemyStats(int hpEnemy, int dmgEnemy, float moveSpeedEnemies, int armorEnemies)
+       public EnemyStats(int hpEnemy, int dmgEnemy, float moveSpeedEnemies, int armorEnemies) //cada enemigo la inicializa en su constructor
         {
             this.hpEnemy = hpEnemy;
             this.dmgEnemy = dmgEnemy;

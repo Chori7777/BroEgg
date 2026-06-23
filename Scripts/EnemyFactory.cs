@@ -9,7 +9,7 @@
 
             switch (enemy)
             {
-                case TypeEnemy.TankEnemy: return new TankEnemy(x, y, wave); break;
+                case TypeEnemy.TankEnemy: return new TankEnemy(x, y, wave); break; //x, y, wave se asignan en el metodo SpawnWave en LevelManager
                 case TypeEnemy.BasicEnemy: return new BasicEnemy(x, y, wave); break;
                 case TypeEnemy.SoldierEnemy: return new SoldierEnemy(x, y, wave); break;
                 case TypeEnemy.FastEnemy: return new FastEnemy(x, y, wave); break;

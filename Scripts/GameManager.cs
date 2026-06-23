@@ -106,7 +106,7 @@ namespace ProyectoSDL2.Engine.Scripts
             wasPPressedLastFrame = isPPressedNow;
         }
 
-        public void Continue()
+        private void Continue()
         {
             levelController.NextLevel();
       
