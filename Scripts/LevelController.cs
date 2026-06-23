@@ -26,11 +26,11 @@ namespace ProyectoSDL2.Engine.Scripts
         private float screenFlashTimer;
         private bool isScreenFlashing;
 
-        private Pool<Bullet> bulletPool = new Pool<Bullet>(20, () => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1));
+        private Pool<Bullet> bulletPool = new Pool<Bullet>(10, () => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1));
 
         //cuando hago => new bullet o => new EnemyBullet, le digo a la T del pool que va a ser
 
-        private Pool<EnemyBullet> enemyBulletPool = new Pool<EnemyBullet>(10, () => new EnemyBullet(0, 0, 12, 12, new Transform(0, 0, 1, 1), 0));
+        private Pool<EnemyBullet> enemyBulletPool = new Pool<EnemyBullet>(3, () => new EnemyBullet(0, 0, 12, 12, new Transform(0, 0, 1, 1), 0));
 
         public void Start()
         {
@@ -124,7 +124,7 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         private void CleanupDestroyedObjects() //metodo clave para limpiar ciclos for y que no haya overflow
         {
-            for (int i = gameObjectsList.Count - 1; i >= 0; i--) //El for lee desde el ultimo elemento hasta el primero
+            for (int i = gameObjectsList.Count - 1; i >= 0; i--)
             {
                 if (gameObjectsList[i].IsPendingDestroy)
                 {
@@ -132,7 +132,7 @@ namespace ProyectoSDL2.Engine.Scripts
                     {
                         bulletPool.Return(bullet); // devuelve al pool
                     }
-                    gameObjectsList.RemoveAt(i); //no se actualice mas
+                    gameObjectsList.RemoveAt(i);
                 }
             }
         }
@@ -162,7 +162,7 @@ namespace ProyectoSDL2.Engine.Scripts
                             player.PlayerStats.RestoreHealth(lifeStealAmount); //se le da vida al jugador con la funcion RestoreHealth si es que en algun momento mejoro el atributo 
                         }
 
-                        bulletObject.IsPendingDestroy = true; //se avisa que esa bala que colisiono tiene que ser destruida
+                        bullet.IsPendingDestroy = true; //se avisa que esa bala que colisiono tiene que ser destruida
 
                         if (enemy.StatsEnemy.IsDead())
                         {
@@ -230,7 +230,7 @@ namespace ProyectoSDL2.Engine.Scripts
                     player.PlayerStats.GetDamaged(bullet.Damage);
                     player.TriggerFlash();
                     TriggerScreenFlash();
-                    bulletObject.IsPendingDestroy = true;
+                    bullet.IsPendingDestroy = true;
                 }
             }
         }

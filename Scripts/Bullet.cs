@@ -8,8 +8,6 @@
         private PlayerStats playerStats;
         public int BaseDamage { get; private set; }
 
-        public event Action<Bullet>? OnDeactivate; // evento para avisar al pool
-
         public bool IsActive { get; private set; }
 
         public void Activate() => IsActive = true;
