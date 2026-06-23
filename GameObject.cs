@@ -11,7 +11,7 @@ namespace ProyectoSDL2.Engine
     {
         protected Transform transform;
         public Transform Transform => transform;
-        private int posX, posY, width, height;
+
 
         public bool IsPendingDestroy = false; // esto es para cuando hay que destruir algo en las colisiones
 

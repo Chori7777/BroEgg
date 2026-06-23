@@ -30,7 +30,7 @@ namespace ProyectoSDL2.Engine
             Transform nearest = null;
             float nearestDistance = float.MaxValue;
 
-            var list = GameManager.Instance.LevelController.GameObjectsList;
+            List<GameObject> list = GameManager.Instance.LevelController.GameObjectsList;
             if (list.Count == 0) return null;
 
             for (int i = 0; i < list.Count; i++)

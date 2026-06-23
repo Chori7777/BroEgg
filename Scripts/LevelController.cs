@@ -151,7 +151,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
                     if (bulletObject.Transform.Overlaps(enemyObject.Transform))
                     {
-                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas con el uso de la tupla
+                        (int finalDamage, bool isCrit, int lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas con el uso de la tupla
                         enemy.StatsEnemy.GetDamaged(finalDamage); //se le manda el daño final al enemigo
                         enemy.TriggerFlash(); 
 

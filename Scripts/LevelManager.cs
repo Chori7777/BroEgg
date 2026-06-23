@@ -130,7 +130,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 int x = Random.Shared.Next(100, 1200);
                 int y = Random.Shared.Next(100, 700);
 
-                var enemyType = GetRandomEnemyType();
+                EnemyFactory.TypeEnemy enemyType = GetRandomEnemyType();
 
                 Enemy enemy = EnemyFactory.CreateEnemy(enemyType, x, y, currentWaveIndex + 1);
 
