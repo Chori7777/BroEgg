@@ -54,11 +54,6 @@
             OnDeactivate?.Invoke(this); // avisa al pool que puede reciclarlo
         }
 
-        public bool Overlaps(Transform other)
-        {
-            return transform.Overlaps(other);
-        }
-
         public override void Render()
         {
             Engine.Draw("assets/bullet.png", transform.PosX, transform.PosY);
