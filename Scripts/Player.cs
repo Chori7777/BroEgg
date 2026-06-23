@@ -25,10 +25,11 @@ namespace ProyectoSDL2.Engine.Scripts
             
             weapons = new List<IWeapon>
             {
-                new Pistol(transform, playerStats),
+                new Pistol(transform, playerStats), //aca se asigna el ownertransform y stats del player a cada arma
                 new Subfusil(transform, playerStats),
                 new Shotgun(transform, playerStats)
             };
+
             currentWeaponIndex = 0;
             currentWeapon = weapons[currentWeaponIndex];
 
@@ -112,7 +113,7 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         public override void Render()
         {
-            if (!isFlashing || (int)(flashTimer * 10) % 2 == 0) //locura esto chicos eh, seguro que chori no sabe ni como funciona, y si lo sabe me lo cojo
+            if (!isFlashing || (int)(flashTimer * 10) % 2 == 0) //locura esto chicos eh
             {
                 Engine.DrawFlipped(animation.CurrentFrame, transform.PosX, transform.PosY, facingRight);
             }

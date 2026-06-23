@@ -133,7 +133,7 @@ namespace ProyectoSDL2.Engine.Scripts
             for (int i = 0; i < gameObjectsList.Count; i++) 
             {
                 GameObject bulletObject = gameObjectsList[i]; 
-                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue; 
+                if (bulletObject.IsPendingDestroy || !(bulletObject is Bullet)) continue; //si algo de esto se cumple salta al siguiente bucle for
 
                 Bullet bullet = (Bullet)bulletObject; 
 
@@ -143,15 +143,15 @@ namespace ProyectoSDL2.Engine.Scripts
                     if (enemyObject.IsPendingDestroy || !(enemyObject is Enemy)) continue;
                     Enemy enemy = (Enemy)enemyObject;
 
-                    if (bullet.Overlaps(enemyObject.Transform))
+                    if (bulletObject.Transform.Overlaps(enemyObject.Transform))
                     {
-                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas
+                        var (finalDamage, isCrit, lifeStealAmount) = bullet.CalculateFinalDamage(); //calcula el daño con todas sus cosas con el uso de la tupla
                         enemy.StatsEnemy.GetDamaged(finalDamage); //se le manda el daño final al enemigo
                         enemy.TriggerFlash(); 
 
                         if (lifeStealAmount > 0)
                         {
-                            player.PlayerStats.RestoreHealth(lifeStealAmount); //se le da vida al jugador con la funcion RestoreHealth
+                            player.PlayerStats.RestoreHealth(lifeStealAmount); //se le da vida al jugador con la funcion RestoreHealth si es que en algun momento mejoro el atributo 
                         }
 
                         bulletObject.IsPendingDestroy = true; //se avisa que esa bala que colisiono tiene que ser destruida
@@ -200,7 +200,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 }
             }
         }
-        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage)
+        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage) //para player
         {
             Bullet bullet = bulletPool.GetBullet(x, y, target, playerStats, baseDamage);
             gameObjectsList.Add(bullet);
@@ -234,7 +234,7 @@ namespace ProyectoSDL2.Engine.Scripts
         }
 
         private void CleanupEnemyBullets()
-        {
+        {  
             for (int i = enemyBulletsList.Count - 1; i >= 0; i--)
             {
                 if (enemyBulletsList[i].IsPendingDestroy)
@@ -243,7 +243,6 @@ namespace ProyectoSDL2.Engine.Scripts
                 }
             }
         }
-        
 
 
         // Separado de lo q hicieron uds

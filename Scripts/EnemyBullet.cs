@@ -5,7 +5,7 @@
         private float dx;
         private float dy;
         private int speed = 5;
-        public int Damage { get; private set; }
+        public int Damage { get; private set; } //esto significa que puede ser leida publicamente pero modificada de forma privada
 
         public EnemyBullet(int startX, int startY, int bulletWidth, int bulletHeight, Transform target, int damage)
             : base(startX, startY, bulletWidth, bulletHeight)
@@ -16,7 +16,7 @@
             float deltaY = target.PosY - startY;
             float length = MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
 
-            if (length == 0)
+            if (length == 0) //ojo con la division por 0 pa, te puede dar muchos problemas en la vida, uno nunca sabe 
             {
                 dx = 0;
                 dy = 0;

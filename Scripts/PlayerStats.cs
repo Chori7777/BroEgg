@@ -62,11 +62,11 @@ namespace ProyectoSDL2.Engine.Scripts
             int reducedDamage = Math.Max(1, amount - armor);
             health -= reducedDamage;
         }
-        public (int finalDamage, bool isCrit, int lifeStealAmount) CalculateDamage()
+        public (int finalDamage, bool isCrit, int lifeStealAmount) CalculateDamage() //tupla
         {
             bool isCrit = Random.Shared.NextSingle() * 100 < critChance;
             int finalDamage = isCrit ? damage * 2 : damage;
-            int lifeStealAmount = (int)(finalDamage * (lifeSteal / 100f));
+            int lifeStealAmount = (int)(finalDamage * (lifeSteal / 10f));
 
             return (finalDamage, isCrit, lifeStealAmount);
         }
@@ -106,7 +106,7 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         public bool UpgradeLifeSteal()
         {
-            lifeSteal += 5f;
+            lifeSteal += 2f;
             return true;
         }
         public bool UpgradeCritChance()

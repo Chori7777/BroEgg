@@ -43,7 +43,7 @@ namespace ProyectoSDL2.Engine.Scripts
             // Primero: Checamos el estado de las teclas UNA SOLA VEZ por frame
             bool upKeyIsPressed = Engine.KeyPress(Engine.KEY_W);
             bool downKeyIsPressed = Engine.KeyPress(Engine.KEY_S);
-            bool spaceKeyIsPressed = Engine.KeyPress(Engine.KEY_Z);
+            bool spaceKeyIsPressed = Engine.KeyPress(Engine.KEY_ESP);
 
           
             if (upKeyIsPressed && !upKeyWasPressed)
@@ -87,8 +87,8 @@ namespace ProyectoSDL2.Engine.Scripts
         {
             Engine.Clear();
             Engine.Draw("assets/Screens/ScreenPayStats.png", 0, 0);
-            Engine.DrawText("Puntos disponibles " + expSystem.AvailableStatPoints, 100, 40, 255, 255, 0, font);
-            Engine.DrawText("NIVEL: " + expSystem.CurrentLevel, 100, 75, 200, 200, 0, font);
+            Engine.DrawText("Puntos disponibles " + expSystem.AvailableStatPoints, 100, 30, 255, 255, 0, font);
+            Engine.DrawText("NIVEL: " + expSystem.CurrentLevel, 100, 65, 200, 200, 0, font);
 
             for (int i = 0; i < options.Length; i++)
             {
@@ -99,9 +99,9 @@ namespace ProyectoSDL2.Engine.Scripts
             }
 
             Engine.DrawText("W/S: Navegar", 550, 500, 150, 150, 150, font);
-            Engine.DrawText("Z: Mejorar stat", 550, 530, 150, 150, 150, font);
+            Engine.DrawText("SPACE: Mejorar stat", 550, 530, 150, 150, 150, font);
             Engine.DrawText("X: Continuar", 550, 560, 150, 150, 150, font);
-            Engine.DrawText("Ronda actual: " + GameManager.Instance.LevelController.LevelManager.CurrentRound, 800, 100, 255, 255, 255, font);
+            Engine.DrawText("Ronda actual: " + GameManager.Instance.LevelController.LevelManager.CurrentRound, 800, 70, 255, 255, 255, font);
 
             Engine.Show();
         }
