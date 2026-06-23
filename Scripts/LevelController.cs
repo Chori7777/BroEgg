@@ -25,6 +25,7 @@ namespace ProyectoSDL2.Engine.Scripts
         private float screenFlashTimer;
         private bool isScreenFlashing;
 
+        private BulletPool bulletPool = new BulletPool(20);
 
         public void Start()
         {
@@ -158,8 +159,8 @@ namespace ProyectoSDL2.Engine.Scripts
                         if (enemy.StatsEnemy.IsDead())
                         {
                             enemy.Die(); //Activa el evento (que suma el contador y da EXP)
-                            //HandleEnemyDied();
-                            //levelManager.OnEnemyKilled();
+                            HandleEnemyDied();
+                            levelManager.OnEnemyKilled();
                         }
 
                         break; //rompemos todos los bucles para volver a empezar
@@ -199,9 +200,10 @@ namespace ProyectoSDL2.Engine.Scripts
                 }
             }
         }
-        public void AddEnemyBullet(EnemyBullet bullet)
+        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage)
         {
-            enemyBulletsList.Add(bullet);
+            Bullet bullet = bulletPool.GetBullet(x, y, target, playerStats, baseDamage);
+            gameObjectsList.Add(bullet);
         }
 
         private void UpdateEnemyBullets()
@@ -241,10 +243,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 }
             }
         }
-        public void AddBullet(Bullet bullet)
-        {
-            gameObjectsList.Add(bullet);
-        }
+        
 
 
         // Separado de lo q hicieron uds
@@ -275,6 +274,11 @@ namespace ProyectoSDL2.Engine.Scripts
         public void HandleEnemyDied()
         {
             CheckWinCondition();
+        }
+
+        public void AddEnemyBullet(EnemyBullet bullet)
+        {
+            enemyBulletsList.Add(bullet);
         }
     }
 }

@@ -33,8 +33,8 @@ namespace ProyectoSDL2.Engine.Scripts
             int weaponX = GetWeaponX();
             int weaponY = GetWeaponY();
 
-            Bullet bullet = new Bullet(weaponX + 50, weaponY + 25, bulletWidth, bulletHeight, target, playerStats, baseDamage);
-            GameManager.Instance.LevelController.AddBullet(bullet);
+            GameManager.Instance.LevelController.AddBullet(weaponX + 50, weaponY + 25, target, playerStats, baseDamage);
+
         }
 
         public override void Render()

@@ -38,27 +38,25 @@ namespace ProyectoSDL2.Engine.Scripts
 
             for (int i = 0; i < pellets; i++)
             {
-                Bullet bullet = CreatePellet(target, i, weaponX, weaponY);
-                GameManager.Instance.LevelController.AddBullet(bullet);
+                Transform fakeTarget = GetSpreadTarget(target, i, weaponX, weaponY);
+                GameManager.Instance.LevelController.AddBullet(weaponX, weaponY, fakeTarget, playerStats, baseDamage);
             }
         }
 
-        private Bullet CreatePellet(Transform target, int pelletIndex, int startX, int startY)
+        private Transform GetSpreadTarget(Transform target, int pelletIndex, int startX, int startY)
         {
             float deltaX = target.PosX - startX;
             float deltaY = target.PosY - startY;
             float angle = MathF.Atan2(deltaY, deltaX);
-            
+
             float spread = (pelletIndex - pellets / 2f) * spreadAngle;
             float newAngle = angle + spread;
-            
-            Transform fakeTarget = new Transform(
+
+            return new Transform(
                 startX + (int)(MathF.Cos(newAngle) * 100),
                 startY + (int)(MathF.Sin(newAngle) * 100),
                 1, 1
             );
-            
-            return new Bullet(startX, startY, bulletWidth, bulletHeight, fakeTarget, playerStats, baseDamage);
         }
 
         public override void Render()
