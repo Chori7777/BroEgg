@@ -106,22 +106,21 @@ namespace ProyectoSDL2.Engine.Scripts
         }
         private EnemyFactory.TypeEnemy GetRandomEnemyType()
         {
-            //Bueno aca se elige un numero aleatorio entre 0 y 1
-            float random = (float)Random.Shared.NextDouble();
-            float total = CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance + CurrentWaveData.SoldierChance;
-            float value = random * total;
+            float random = (float)Random.Shared.NextDouble(); //Bueno aca se elige un numero aleatorio entre 0.0 y 1.0
+            float total = CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance + CurrentWaveData.SoldierChance; //suma las chances de que aparenzacn enemigos raros
+            float value = random * total; // escala el random al rango total
 
-            if (value < CurrentWaveData.BasicChance)
+            if (value < CurrentWaveData.BasicChance)     // 0 a 95 Basic
                 return EnemyFactory.TypeEnemy.BasicEnemy;
 
-            else if (value < CurrentWaveData.BasicChance + CurrentWaveData.FastChance)
+            else if (value < CurrentWaveData.BasicChance + CurrentWaveData.FastChance) // 95 a 96 Fast
                 return EnemyFactory.TypeEnemy.FastEnemy;
 
-            else if (value < CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance)
+            else if (value < CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance) // 96 a 106 Tank
                 return EnemyFactory.TypeEnemy.TankEnemy;
 
             else
-                return EnemyFactory.TypeEnemy.SoldierEnemy;
+                return EnemyFactory.TypeEnemy.SoldierEnemy; // 106 a 111 Soldier
         }
     
         private void SpawnWave()
@@ -140,7 +139,6 @@ namespace ProyectoSDL2.Engine.Scripts
 
                 levelController.GameObjectsList.Add(enemy);
             }
-            
         }
         //  ────────────  Asesinato  ────────────────────────────────────────────────
         public void OnEnemyKilled()
