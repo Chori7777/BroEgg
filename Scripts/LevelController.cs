@@ -26,7 +26,9 @@ namespace ProyectoSDL2.Engine.Scripts
         private float screenFlashTimer;
         private bool isScreenFlashing;
 
-        private Pool<Bullet> bulletPool = new Pool<Bullet>(10, () => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1));
+        private Pool<Bullet> bulletPool = new Pool<Bullet>(10, () => new Bullet(0, 0, 16, 16, new Transform(0, 0, 1, 1), null, 1)); //no se manda nada en el constructor,
+                                                                                                                                    //ya que solo se inicializa y se guarda en memoria,
+                                                                                                                                    //los valores se asignan en reset
 
         //cuando hago => new bullet o => new EnemyBullet, le digo a la T del pool que va a ser
 
@@ -288,7 +290,7 @@ namespace ProyectoSDL2.Engine.Scripts
             enemyBulletsList.Add(bullet);
         }
 
-        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage) //para player
+        public void AddBullet(int x, int y, Transform target, PlayerStats playerStats, int baseDamage) //se llama desde las armas
         {
             Bullet bullet = bulletPool.Get();
             bullet.Reset(x, y, target, playerStats, baseDamage);
