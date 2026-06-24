@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoSDL2.Engine.Scripts
 {
-    public class Pool<T> where T : IPoolable
+    public class Pool<T> where T : IPoolable //where sirve para especificar que T tengan la interfaz IPoolable
     {
         private List<T> available = new List<T>();
         private List<T> inUse = new List<T>();

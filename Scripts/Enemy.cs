@@ -39,7 +39,7 @@ namespace ProyectoSDL2.Engine.Scripts
         public void TriggerFlash()
         {
             isFlashing = true;
-            flashTimer = 0.2f;
+            flashTimer = 0.05f;
         }
 
         private void UpdateFacingDirection()

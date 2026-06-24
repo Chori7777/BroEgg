@@ -26,9 +26,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
 
         public int EnemiesKilled => enemiesKilled;
-        public int CurrentRound => currentWaveIndex + 1;
-
-       
+        public int CurrentRound => currentWaveIndex + 1; //se le suma 1 para la UI
 
         public int Timer => (int)waveTimer;
 
@@ -36,7 +34,7 @@ namespace ProyectoSDL2.Engine.Scripts
 
         public WaveData CurrentWaveData => waveDataList[currentWaveIndex];
 
-        public LevelManager(LevelController controller)
+        public LevelManager(LevelController controller) //se inicia en level controller
         {
             levelController = controller;
             expSystem = new ExpSystem();
@@ -50,9 +48,9 @@ namespace ProyectoSDL2.Engine.Scripts
             //EL PORCENTAJE DE ENEMIGOS TANQUE Y LOS ENEMIGOS SOLDADO
 
             //Oleada 1
-            waveDataList.Add(new WaveData(20, 20f, 95f, 1f, 10f, 5f,4));
+            waveDataList.Add(new WaveData(20, 20f, 90f, 1f, 10f, 5f,4));
             //Oleada 2
-            waveDataList.Add(new WaveData(25, 30f, 80f, 5f, 10f, 0f,4));
+            waveDataList.Add(new WaveData(25, 30f, 80f, 5f, 10f, 5f,4));
             //Oleada 3
             waveDataList.Add(new WaveData(40, 40f, 70f, 5f, 15f, 5f,5));
             //Oleada 4
@@ -93,7 +91,7 @@ namespace ProyectoSDL2.Engine.Scripts
         }
 
 
-        // ── Spawn ────────────────────────────────────────────────
+        //  Spawn 
 
         private void HandleSpawnTimer()
         {
@@ -104,7 +102,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 spawnTimer = 0;
             }
         }
-        private EnemyFactory.TypeEnemy GetRandomEnemyType()
+        private EnemyFactory.TypeEnemy GetRandomEnemyType() //Metodo de tipo enum (aura chat)
         {
             float random = (float)Random.Shared.NextDouble(); //Bueno aca se elige un numero aleatorio entre 0.0 y 1.0
             float total = CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance + CurrentWaveData.SoldierChance; //suma las chances de que aparenzacn enemigos raros
@@ -140,7 +138,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 levelController.GameObjectsList.Add(enemy);
             }
         }
-        //  ────────────  Asesinato  ────────────────────────────────────────────────
+        //   Asesinato  
         public void OnEnemyKilled()
         {
             enemiesKilled++;

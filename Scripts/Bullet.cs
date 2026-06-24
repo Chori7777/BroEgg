@@ -41,6 +41,7 @@
 
         public override void Update()
         {
+            if (!IsActive) return;
             transform.Translate((int)(dx * speed), (int)(dy * speed));
 
             if (transform.PosX < -50 || transform.PosX > 1330 ||
@@ -58,6 +59,7 @@
 
         public override void Render()
         {
+            if (!IsActive) return;
             Engine.Draw("assets/bullet.png", transform.PosX, transform.PosY);
         }
 

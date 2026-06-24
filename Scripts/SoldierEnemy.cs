@@ -20,7 +20,6 @@
                 Engine.LoadImage("assets/enemy/SoldierEnemy.png"),
                 Engine.LoadImage("assets/enemy/SoldierEnemy1.png"),
                 Engine.LoadImage("assets/enemy/SoldierEnemy2.png"),
-
             };
         }
 
