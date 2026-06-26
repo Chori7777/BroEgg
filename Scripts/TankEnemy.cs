@@ -14,13 +14,13 @@
 
         private static List<Image> GetFrames()
         {
-            return new List<Image>
-            {
-                Engine.LoadImage("assets/enemy/TankEnemy_0.png"),
-                Engine.LoadImage("assets/enemy/TankEnemy_1.png"),
-                Engine.LoadImage("assets/enemy/TankEnemy_2.png"),
-                Engine.LoadImage("assets/enemy/TankEnemy_3.png")
-            };
+            List<Image> lista = new List<Image>();
+            lista.Add(Engine.LoadImage("assets/enemy/TankEnemy_0.png"));
+            lista.Add(Engine.LoadImage("assets/enemy/TankEnemy_1.png"));
+            lista.Add(Engine.LoadImage("assets/enemy/TankEnemy_2.png"));
+            lista.Add(Engine.LoadImage("assets/enemy/TankEnemy_3.png"));
+            return lista;
         }
+        
     }
 }

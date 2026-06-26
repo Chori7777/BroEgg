@@ -202,6 +202,7 @@ namespace ProyectoSDL2.Engine.Scripts
                 if (levelManager.HasWon())
                 {
                     GameManager.Instance.ChangeGameState(GAME_STATE.WIN);
+
                 }
                 else
                 {

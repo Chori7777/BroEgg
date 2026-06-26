@@ -39,7 +39,7 @@ namespace ProyectoSDL2.Engine.Scripts
         //Calculos para la escala de niveles y hacerlo mas automatico
         private float CalculateExpForNextLevel()
         {
-            return expToNextLevel * currentLevel * 1.5f;
+            return 100 * currentLevel * 1.5f;
         }
         // Para la pantalla de transicion 
         public bool SpendStatPoint()
@@ -50,14 +50,6 @@ namespace ProyectoSDL2.Engine.Scripts
                 return true;
             }
             return false;
-        }
-        // Reiniciar las variables cuando se reinicia el juego
-        public void Reset()
-        {
-            currentLevel = 1;
-            currentExp = 0;
-            expToNextLevel = 100;
-            availableStatPoints = 0; 
         }
 
     }

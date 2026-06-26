@@ -54,7 +54,7 @@ namespace ProyectoSDL2.Engine.Scripts
             //Oleada 3
             waveDataList.Add(new WaveData(40, 40f, 70f, 5f, 15f, 5f,5));
             //Oleada 4
-           /* waveDataList.Add(new WaveData(45, 50f, 70f, 10f, 10f, 10f,5));
+            waveDataList.Add(new WaveData(45, 50f, 70f, 10f, 10f, 10f,5));
             //Oleada 5
             waveDataList.Add(new WaveData(60, 60f, 60f, 15f, 15f, 10f,6));
             //Oleada 6
@@ -66,7 +66,7 @@ namespace ProyectoSDL2.Engine.Scripts
             //Oleada 9
             waveDataList.Add(new WaveData(90, 90f, 25f, 25f, 25f, 25f,8));
             //Oleada 10
-            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));*/
+            waveDataList.Add(new WaveData(100, 90f, 15f, 30f, 25f, 25f, 6));
             
 
 
@@ -108,13 +108,13 @@ namespace ProyectoSDL2.Engine.Scripts
             float total = CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance + CurrentWaveData.SoldierChance; //suma las chances de que aparenzacn enemigos raros
             float value = random * total; // escala el random al rango total
 
-            if (value < CurrentWaveData.BasicChance)     // 0 a 95 Basic
+            if (value <= CurrentWaveData.BasicChance)     // 0 a 95 Basic
                 return EnemyFactory.TypeEnemy.BasicEnemy;
 
-            else if (value < CurrentWaveData.BasicChance + CurrentWaveData.FastChance) // 95 a 96 Fast
+            else if (value <= CurrentWaveData.BasicChance + CurrentWaveData.FastChance) // 95 a 96 Fast
                 return EnemyFactory.TypeEnemy.FastEnemy;
 
-            else if (value < CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance) // 96 a 106 Tank
+            else if (value <= CurrentWaveData.BasicChance + CurrentWaveData.FastChance + CurrentWaveData.TankChance) // 96 a 106 Tank
                 return EnemyFactory.TypeEnemy.TankEnemy;
 
             else

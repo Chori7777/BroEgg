@@ -15,13 +15,13 @@
 
         private static List<Image> GetFrames()
         {
-            return new List<Image>
-            {
-                Engine.LoadImage("assets/enemy/SoldierEnemy.png"),
-                Engine.LoadImage("assets/enemy/SoldierEnemy1.png"),
-                Engine.LoadImage("assets/enemy/SoldierEnemy2.png"),
-            };
+            List<Image> lista = new List<Image>();
+            lista.Add(Engine.LoadImage("assets/enemy/SoldierEnemy.png"));
+            lista.Add(Engine.LoadImage("assets/enemy/SoldierEnemy1.png"));
+            lista.Add(Engine.LoadImage("assets/enemy/SoldierEnemy2.png"));
+            return lista;
         }
+        
 
         public override void Update()
         {
@@ -42,7 +42,7 @@
                     bulletWidth,
                     bulletHeight,
                     playerTransform,
-                    StatsEnemy.DmgEnemy
+                    StatsEnemy.DmgEnemy //hereda de enemy
                 );
 
                GameManager.Instance.LevelController.AddEnemyBullet(transform.PosX, transform.PosY, playerTransform, StatsEnemy.DmgEnemy);

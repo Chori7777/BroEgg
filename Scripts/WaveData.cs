@@ -25,7 +25,6 @@ namespace ProyectoSDL2.Engine.Scripts
             TankChance = tank;
             SoldierChance = soldier;
             EnemiesPerRound = enemiesPerWave;
-
         }
     }
 }
